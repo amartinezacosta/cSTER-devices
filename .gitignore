@@ -1,0 +1,11 @@
+build/
+html/
+latex/
+doc/
+*.o
+*.a
+*.d
+*.map
+*.elf
+*.htm
+*.html
