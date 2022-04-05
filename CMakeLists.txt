@@ -1,6 +1,9 @@
-cmake_minimum_required()
+cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_TOOLCHAIN_FILE cSTER-drivers/cmake/toolchain-arm-none-eabi.cmake)
+set(CSTER_DRIVERS_INCLUDE_PATH ../cSTER-drivers/include/)
+set(CSTER_DRIVERS_TOOLCHAIN_PATH cSTER-drivers/cmake)
+
+set(CMAKE_TOOLCHAIN_FILE ${CSTER_DRIVERS_TOOLCHAIN_PATH}/toolchain-arm-none-eabi.cmake)
 
 project(cSTER-devices)
 

@@ -4,8 +4,8 @@
 #set(CSTER_DEVICE_TABLE_PATH ../cSTER-drivers/build/ports/tm4c123/devices/tm4c1233h6pm)
 
 #Build library
-add_library(cSTER_devices_motor STATIC src/motor.c)
-target_include_directories(cSTER_devices_motor PRIVATE 
+add_library(cSTER_devices_ppm STATIC src/ppm.c)
+target_include_directories(cSTER_devices_ppm PRIVATE 
         ${CSTER_DRIVERS_INCLUDE_PATH}
         include/
         )
