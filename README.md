@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
-    <img src="resources/images/cSTER_logo.png" alt="Logo">
+    <img src="cSTER-drivers/resources/images/cSTER_logo.png" alt="Logo">
   </a>
 
   <h3 align="center">cSTER devices library for Cortex M4F microcontrollers</h3>
