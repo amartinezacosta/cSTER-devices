@@ -30,7 +30,7 @@ For Windows, you will need to install make and add it to your PATH environment v
 * [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm)
 
 
-### Installing using Cmake
+### Installing using cmake
 To build the libraries navigate to the cloned folder and type the following command sequence on a terminal
 ```
 mkdir build
