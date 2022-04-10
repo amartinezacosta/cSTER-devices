@@ -49,19 +49,29 @@ int main(void)
     /*Initialize SysTick timer*/
     SysTick_init();
 
+    /*Initialize time to 0*/
+    uint32_t t0 = 0, deltaTime = 0;
+
     while(1)
     {
        
-        uint32_t deltaTime = SysTick_millis();      //Capture time
+        t0 = SysTick_millis();      //Capture time
         int32_t ticks = motor_position(&motor0);    //Capture total ticks
        
         /*Get pid update*/
         float output = pid_update(&motor_pid, ticks, deltaTime);
+        
+        /*Check output*/
+        uint32_t direction = output < 0 ? CLOCKWISE : COUNTER_CLOCKWISE;
+        
         /*Update motor speed from PID output*/
-        motor_speed(&motor0, output, CLOCKWISE);
-
+        motor_speed(&motor0, output, direction);
+        
         /*Display logger*/
         log_info("ticks=%i, output=%f", ticks,output);
+
+        deltaTime = SysTick_millis() - t0;      //Capture time
+
     }
 }
 
