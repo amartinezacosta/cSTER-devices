@@ -11,6 +11,8 @@
   </p>
 </div>
 
+[![CMake](https://github.com/amartinezacosta/cSTER-devices/actions/workflows/main.yml/badge.svg)](https://github.com/amartinezacosta/cSTER-devices/actions/workflows/main.yml)
+
 ## Description
 
 The cSTER drivers will help you get started writing applications using device hardware such as
