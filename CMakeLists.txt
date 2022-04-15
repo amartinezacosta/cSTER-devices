@@ -7,6 +7,9 @@ set(CMAKE_TOOLCHAIN_FILE ${CSTER_DRIVERS_TOOLCHAIN_PATH}/toolchain-arm-none-eabi
 
 project(cSTER-devices)
 
+#cSTER drivers
+add_subdirectory(cSTER-drivers/)
+
 #Devices build
 add_subdirectory(motor/)
 add_subdirectory(ppm/)
