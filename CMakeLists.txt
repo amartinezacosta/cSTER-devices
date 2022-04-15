@@ -10,7 +10,13 @@ project(cSTER-devices)
 #Devices build
 add_subdirectory(motor/)
 add_subdirectory(ppm/)
+add_subdirectory(servo/)
 #add_subdirectory(wifi/)
 
-#Devices build
+add_library(cSTER_devices INTERFACE)
+target_link_libraries(cSTER_devices INTERFACE 
+    cSTER_devices_motor
+    cSTER_devices_ppm
+    #cSTER_devices_servo
+    )
 
