@@ -5,10 +5,17 @@
 
 #Build library
 add_library(cSTER_devices_motor STATIC src/motor.c)
+add_library(cSTER_devices_motor_pid STATIC src/pid.c)
+
 target_include_directories(cSTER_devices_motor PRIVATE 
         ${CSTER_DRIVERS_INCLUDE_PATH}
         include/
         )
+
+target_include_directories(cSTER_devices_motor_pid PRIVATE 
+        ${CSTER_DRIVERS_INCLUDE_PATH}
+        include/
+)
 
 #Build example executable
 #add_executable(single_motor_example examples/single_motor_example.c)
