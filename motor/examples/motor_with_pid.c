@@ -11,7 +11,13 @@ int main(void)
     dev_t *pwm1 = HAL_find_name("PWM_1");
     dev_t *gpio0 = HAL_find_name("GPIO_0");
     dev_t *gpio1 = HAL_find_name("GPIO_1");
-    dev_t *gpio_sleep = HAL_find_name("GPIO_2");
+    dev_t *gpio_sleep = HAL_find_name("GPIO_8");
+
+
+    dev_t *enableSwReg = HAL_find_name("GPIO_13");
+    GPIO_open(enableSwReg, HAL_CONFIG_DEFAULT);
+    GPIO_write(enableSwReg, GPIO_STATE_HIGH);
+    HAL_ASSERT_MODULE_NAME(enableSwReg, "main");
 
     /*Assert all pointers*/
     HAL_ASSERT_MODULE_NAME(pwm0 &&
@@ -41,10 +47,13 @@ int main(void)
     pid_init(&motor_pid, default_params);
 
     /*Set reference*/
-    pid_set_reference(&motor_pid, motor0.count);
+    pid_set_reference(&motor_pid, 1500);
 
     /*Set initial speed*/
     motor_speed(&motor0, 25000, CLOCKWISE);
+
+    /*Enable motor*/
+    motor_enable(&motor0);
 
     /*Initialize SysTick timer*/
     SysTick_init();
@@ -54,19 +63,19 @@ int main(void)
 
     while(1)
     {
-       
+
         t0 = SysTick_millis();      //Capture time
         int32_t ticks = motor_position(&motor0);    //Capture total ticks
-       
+
         /*Get pid update*/
         float output = pid_update(&motor_pid, ticks, deltaTime);
-        
+
         /*Check output*/
         uint32_t direction = output < 0 ? CLOCKWISE : COUNTER_CLOCKWISE;
-        
+
         /*Update motor speed from PID output*/
         motor_speed(&motor0, output, direction);
-        
+
         /*Display logger*/
         log_info("ticks=%i, output=%f", ticks,output);
 

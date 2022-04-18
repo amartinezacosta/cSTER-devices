@@ -11,12 +11,15 @@
   </p>
 </div>
 
+[![CMake](https://github.com/amartinezacosta/cSTER-devices/actions/workflows/main.yml/badge.svg)](https://github.com/amartinezacosta/cSTER-devices/actions/workflows/main.yml)
+
 ## Description
 
 The cSTER drivers will help you get started writing applications using device hardware such as
 * Motor with encoders
 * WizFi360-PA
 * Pulse Position Modulation (PPM) 
+* Servo
 
 ## Getting Started
 
@@ -49,6 +52,18 @@ make
 ### Examples
 Tell people how to find examples and how to look for the register level code
 
+```
+├── motor
+    ├── motor_with_pid.c
+    ├── single_motor_example.c
+├── ppm
+    ├── ppm_radio_link.c
+├── servo
+    ├── servo_example.c
+├── servo
+    ├── mqtt.c
+    ├── wifi.c
+```
 ## Help
 
 Any advise for common problems or issues.
