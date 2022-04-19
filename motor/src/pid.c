@@ -44,8 +44,8 @@ bool pid_reached(PID_t * const me)
 {
     bool result = false;
 
-    if((me->error <  me->params->error_min_threshold) && 
-       (me->error > me->params->error_max_threshold))
+    if((me->error >  me->params->error_min_threshold) && 
+       (me->error < me->params->error_max_threshold))
     {
         result = true;
     }
