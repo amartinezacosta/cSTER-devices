@@ -17,6 +17,7 @@ int main(void)
     dev_t *gpio10 = HAL_find_name("GPIO_2");
     dev_t *gpio11 = HAL_find_name("GPIO_3");
     dev_t *gpio1_sleep = HAL_find_name("GPIO_8");
+
     
     /*Find all devices from device table*/
     dev_t *pwm20 = HAL_find_name("PWM_4");
@@ -24,7 +25,7 @@ int main(void)
     dev_t *gpio20 = HAL_find_name("GPIO_4");
     dev_t *gpio21 = HAL_find_name("GPIO_5");
     dev_t *gpio2_sleep = HAL_find_name("GPIO_9");
-    
+
     /*Enable buck converter*/
     dev_t *enableSwReg = HAL_find_name("GPIO_13");
     
