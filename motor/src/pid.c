@@ -5,6 +5,8 @@ void pid_init(PID_t * const me, PID_params_t *params)
     me->params = params;
     me->reference = 0.0;
     me->integral = 0.0;
+    me->derivative = 0.0;
+    me->proportional = 0.0;
     me->prev_measurement = 0.0;
 }
 
