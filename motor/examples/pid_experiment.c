@@ -46,8 +46,8 @@ int main(void)
         .error_min_threshold = -10.0,
         .max_integral = 1000.0,
         .min_integral = -1000.0,
-        .max_output = 3000.0,
-        .min_output = -3000.0
+        .max_output = 50000.0,
+        .min_output = -50000.0
     };
     
     /*Instantiate pid object*/
