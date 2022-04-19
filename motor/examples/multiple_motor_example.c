@@ -1,5 +1,6 @@
 #include <logger.h>
 #include <GPIO_HAL.h>
+#include "motor.h"
 
 int main(void)
 {
@@ -15,14 +16,14 @@ int main(void)
     dev_t *pwm11 = HAL_find_name("PWM_3");
     dev_t *gpio10 = HAL_find_name("GPIO_2");
     dev_t *gpio11 = HAL_find_name("GPIO_3");
-    dev_t *gpio0_sleep = HAL_find_name("GPIO_8");
+    dev_t *gpio1_sleep = HAL_find_name("GPIO_8");
     
     /*Find all devices from device table*/
     dev_t *pwm20 = HAL_find_name("PWM_4");
     dev_t *pwm21 = HAL_find_name("PWM_5");
     dev_t *gpio20 = HAL_find_name("GPIO_4");
     dev_t *gpio21 = HAL_find_name("GPIO_5");
-    dev_t *gpio1_sleep = HAL_find_name("GPIO_9");
+    dev_t *gpio2_sleep = HAL_find_name("GPIO_9");
     
     /*Enable buck converter*/
     dev_t *enableSwReg = HAL_find_name("GPIO_13");
@@ -39,14 +40,14 @@ int main(void)
                            pwm11 &&
                            gpio10 &&
                            gpio11 &&
-                           gpio0_sleep, "main");
+                           gpio1_sleep, "main");
                            
     /*Assert devices motor 2*/
     HAL_ASSERT_MODULE_NAME(pwm20 &&
                            pwm21 &&
                            gpio20 &&
                            gpio21 &&
-                           gpio1_sleep, "main");
+                           gpio2_sleep, "main");
                            
     /*Assert devices buck regulator*/
     HAL_ASSERT_MODULE_NAME(enableSwReg, "main");
