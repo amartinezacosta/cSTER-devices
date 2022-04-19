@@ -12,19 +12,20 @@ int main(void)
 
     /*Enable buck converter*/
     dev_t *enableSwReg = HAL_find_name("GPIO_13");
-    GPIO_open(enableSwReg, HAL_CONFIG_DEFAULT);
-    /*Set GPIO high*/
-    GPIO_write(enableSwReg, GPIO_STATE_HIGH);
-    /*Assert to main*/
+    
+    /*Assert buck converter device*/
     HAL_ASSERT_MODULE_NAME(enableSwReg, "main");
-
-
+    
     /*Assert all motor devices*/
     HAL_ASSERT_MODULE_NAME(pwm0 &&
                            pwm1 &&
                            gpio0 &&
                            gpio1 &&
                            gpio_sleep, "motor");
+
+    GPIO_open(enableSwReg, HAL_CONFIG_DEFAULT);
+    /*Set GPIO high*/
+    GPIO_write(enableSwReg, GPIO_STATE_HIGH);
 
     /*Motor setup*/
     motor_t motor0;
