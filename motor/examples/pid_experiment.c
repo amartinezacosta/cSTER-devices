@@ -1,8 +1,15 @@
 #include <logger.h>
+#include <SysTick_HAL.h>
+#include <math.h>
+
 #include "motor.h"
 #include "pid.h"
-#include "SysTick_HAL.h"
 
+#define DATA_POINTS 256
+
+float time[DATA_POINTS];
+int32_t encoder_output[DATA_POINTS];
+uint32_t pwm_input[DATA_POINTS];
 
 int main(void)
 {
@@ -12,7 +19,6 @@ int main(void)
     dev_t *gpio0 = HAL_find_name("GPIO_0");
     dev_t *gpio1 = HAL_find_name("GPIO_1");
     dev_t *gpio_sleep = HAL_find_name("GPIO_8");
-
 
     dev_t *enableSwReg = HAL_find_name("GPIO_13");
     GPIO_open(enableSwReg, HAL_CONFIG_DEFAULT);
@@ -31,7 +37,7 @@ int main(void)
     motor_ctor(&motor0, pwm0, pwm1, gpio0, gpio1, gpio_sleep);
 
     /*Set default parameters for PID*/
-    PID_params_t default_params =
+    PID_params_t default_params = 
     {  
         .kp = 1.0,
         .ki = 0.0,
@@ -52,37 +58,49 @@ int main(void)
     /*Set reference*/
     pid_set_reference(&motor_pid, 1500);
 
-    /*Set initial speed*/
-    motor_speed(&motor0, 25000, CLOCKWISE);
-
     /*Enable motor*/
     motor_enable(&motor0);
 
-    /*Initialize SysTick timer*/
-    SysTick_init();
-
     /*Initialize time to 0*/
-    uint32_t t0 = 0, deltaTime = 0;
+    uint32_t t0 = 0; 
+    float dt = 0;
+    uint32_t index = 0;
+
+    /*Perform experiment until set point has been reached*/
+    while(!pid_reached(&motor_pid))
+    {
+        t0 = SysTick_millis();
+
+        /*Motor position and PID update*/
+        int32_t ticks = motor_position(&motor0);
+        float output = pid_update(&motor_pid, ticks, dt);
+
+        /*Motor direction*/
+        uint32_t direction = output < 0 ? CLOCKWISE : COUNTER_CLOCKWISE;
+        uint32_t pwm = (uint32_t)fabs(output);
+
+        motor_speed(&motor0, (uint32_t)fabs(output), direction);
+
+        /*Save data for logging*/
+        time[index] = dt;
+        pwm_input[index] = pwm;
+        encoder_output[index] = ticks;
+
+        /*Increment data index*/
+        index++;
+
+        SysTick_delay(10);
+        dt = (SysTick_millis() - t0)/1000.0;
+    }
+
+    /*Experiment done, dump all data to serial console*/
+    for(uint32_t i = 0; i < index; i++)
+    {
+        log_info("%f,%i,%i", time[i], pwm_input[i], encoder_output[i]);
+    }
 
     while(1)
     {
-
-        t0 = SysTick_millis();      //Capture time
-        int32_t ticks = motor_position(&motor0);    //Capture total ticks
-
-        /*Get pid update*/
-        float output = pid_update(&motor_pid, ticks, deltaTime);
-
-        /*Check output*/
-        uint32_t direction = output < 0 ? CLOCKWISE : COUNTER_CLOCKWISE;
-
-        /*Update motor speed from PID output*/
-        motor_speed(&motor0, output, direction);
-
-        /*Display logger*/
-        log_info("ticks=%i, output=%f", ticks,output);
-
-        deltaTime = SysTick_millis() - t0;      //Capture time
 
     }
 }
