@@ -36,6 +36,6 @@ void motor_speed(motor_t * const me,
                  uint32_t const speed,
                  uint32_t const direction);
 int32_t motor_position(motor_t * const me);
-int32_t motor_delta_position(motor_t * const me);
+int32_t motor_position_delta(motor_t * const me);
 
 #endif
