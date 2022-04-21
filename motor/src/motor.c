@@ -74,6 +74,11 @@ int32_t motor_position(motor_t * const me)
     return me->count;
 }
 
+int32_t motor_delta_position(motor_t * const me)
+{
+    return me->delta_count;
+}
+
 void encoder_callback(void **args, uint32_t argc)
 {
     motor_t *me = (motor_t*)args[0];
@@ -94,5 +99,8 @@ void encoder_callback(void **args, uint32_t argc)
         if(input_0) me->count--;
         else        me->count++;
     }
+
+    me->delta_count = me->count - me->prev_count;
+    me->prev_count = me->count;
 }
 
