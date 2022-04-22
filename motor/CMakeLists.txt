@@ -81,3 +81,20 @@ target_link_libraries(pid_experiment PRIVATE
         cSTER_devices_pid
         )
 
+#Step response
+add_executable(step_response examples/step_response.c)
+target_include_directories(step_response PRIVATE 
+        ${CSTER_DRIVERS_INCLUDE_PATH} 
+        include/
+        )
+
+target_link_options(step_response PRIVATE -T${LINKER_SCRIPT_TM4C1233H6PM})
+target_link_libraries(step_response PRIVATE
+        devtable_robotic_arm_tm4c1233h6pm
+        cSTER_drivers_tm4c1233h6pm
+        devtable_robotic_arm_tm4c1233h6pm
+        cSTER_drivers_tm4c1233h6pm
+        cSTER_devices_motor
+        cSTER_devices_pid
+        )
+

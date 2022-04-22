@@ -74,7 +74,7 @@ int32_t motor_position(motor_t * const me)
     return me->count;
 }
 
-int32_t motor_delta_position(motor_t * const me)
+int32_t motor_position_delta(motor_t * const me)
 {
     return me->delta_count;
 }
