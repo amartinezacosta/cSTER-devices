@@ -98,3 +98,20 @@ target_link_libraries(step_response PRIVATE
         cSTER_devices_pid
         )
 
+
+#Multiple motor pid experiment
+add_executable(multiple_motors_pid_experiment examples/multiple_motors_pid_experiment.c)
+target_include_directories(multiple_motors_pid_experiment PRIVATE 
+        ${CSTER_DRIVERS_INCLUDE_PATH} 
+        include/
+        )
+
+target_link_options(multiple_motors_pid_experiment PRIVATE -T${LINKER_SCRIPT_TM4C1233H6PM})
+target_link_libraries(multiple_motors_pid_experiment PRIVATE
+        devtable_robotic_arm_tm4c1233h6pm
+        cSTER_drivers_tm4c1233h6pm
+        devtable_robotic_arm_tm4c1233h6pm
+        cSTER_drivers_tm4c1233h6pm
+        cSTER_devices_motor
+        cSTER_devices_pid
+        )
