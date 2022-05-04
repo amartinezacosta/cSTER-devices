@@ -65,12 +65,12 @@ int main(void)
         int32_t delta = motor_position_delta(&motor0);
 
         /*Motor direction*/
-        motor_speed(&motor0, step, CLOCKWISE);
+        motor_speed(&motor0, step, COUNTER_CLOCKWISE);
 
         /*Save data for logging*/
         if(index < DATA_POINTS)
         {
-            /*Dave data*/
+            /*Save data*/
             time[index] = t;
             pwm_input[index] = step;
             encoder_position[index] = ticks;
@@ -89,6 +89,7 @@ int main(void)
     motor_speed(&motor0, 0, 0);
 
     /*Experiment done, dump all data to serial console*/
+    log_raw("time,pwm_input,ticks,delta_ticks");
     for(uint32_t i = 0; i < index; i++)
     {
         log_raw("%i,%i,%i,%i", time[i], 

@@ -10,7 +10,6 @@ doc/
 *.htm
 *.html
 
-
 # Ignore csv and png
 *.csv
 *.png
@@ -20,3 +19,4 @@ doc/
 
 # Ignore vscode
 .vscode/
+
