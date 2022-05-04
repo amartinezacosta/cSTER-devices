@@ -28,6 +28,7 @@ void motor_ctor(motor_t * const me,
     GPIO_ioctl(me->gpio1, HAL_IOCTL_EVENT_SET_ARGS, me);
 
     /*Initialize encoder variables*/
+    me->prev_count = 0;
     me->count = 0;
 
     //uint8_t state = 0;
@@ -76,7 +77,12 @@ int32_t motor_position(motor_t * const me)
 
 int32_t motor_position_delta(motor_t * const me)
 {
-    return me->delta_count;
+    int32_t count = me->count;
+    int32_t prev_count = me->prev_count;
+
+    me->prev_count = me->count;
+
+    return (count - prev_count);
 }
 
 void encoder_callback(void **args, uint32_t argc)
@@ -87,8 +93,7 @@ void encoder_callback(void **args, uint32_t argc)
     uint8_t input_1 = GPIO_read(me->gpio1);
 
     /*TODO: This is not the right way to read the encoders.
-     * We are missing half of the pulses.
-     */
+     * We are missing half of the pulses.*/
     if(input_0)
     {
         if(input_1) me->count++;
@@ -100,7 +105,7 @@ void encoder_callback(void **args, uint32_t argc)
         else        me->count++;
     }
 
-    me->delta_count = me->count - me->prev_count;
-    me->prev_count = me->count;
+    //me->delta_count = me->count - me->prev_count;
+    //me->prev_count = me->count;
 }
 
