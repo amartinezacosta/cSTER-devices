@@ -9,4 +9,14 @@ doc/
 *.elf
 *.htm
 *.html
+
+# Ignore csv and png
 *.csv
+*.png
+
+# Ignore MacOS
+.DS_Store
+
+# Ignore vscode
+.vscode/
+
