@@ -21,6 +21,7 @@ typedef struct
     int32_t prev_count;
     int32_t delta_count;
     uint8_t state;
+    uint32_t min_speed;
 }motor_t;
 
 void motor_ctor(motor_t * const me,
@@ -32,6 +33,7 @@ void motor_ctor(motor_t * const me,
 
 void motor_enable(motor_t * const me);
 void motor_disable(motor_t * const me);
+void motor_set_min_speed(motor_t * const me, uint32_t min_speed);
 void motor_speed(motor_t * const me,
                  uint32_t const speed,
                  uint32_t const direction);

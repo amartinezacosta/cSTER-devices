@@ -30,12 +30,7 @@ void motor_ctor(motor_t * const me,
     /*Initialize encoder variables*/
     me->prev_count = 0;
     me->count = 0;
-
-    //uint8_t state = 0;
-    //if(GPIO_read(me->gpio0)){ state |= 1; }
-    //if(GPIO_read(me->gpio1)){ state |= 2; }
-
-    //me->state = state;
+    me->min_speed = 7500;
 }
 
 void motor_enable(motor_t * const me)
@@ -52,6 +47,13 @@ void motor_speed(motor_t * const me,
                  uint32_t const speed,
                  uint32_t const direction)
 {
+    if(speed < me->min_speed)
+    {
+        PWM_write(me->pwm0, 0);
+        PWM_write(me->pwm1, 0);
+        return;
+    }
+
     if(direction == CLOCKWISE)
     {
         PWM_write(me->pwm0, speed);
