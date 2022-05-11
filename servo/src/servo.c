@@ -8,25 +8,25 @@ void servo_ctor(servo_t * const me,
     PWM_open(pwm, HAL_CONFIG_DEFAULT);
 
     /*Servo frequency limited to 50Hz*/
-    PWM_ioctl(pwm, HAL_IOCTL_PWM_SET_FREQUENCY, (uint32_t*)50);
+    // PWM_ioctl(pwm, HAL_IOCTL_PWM_SET_FREQUENCY, (uint32_t*)50);
 
     /*Set servo intial position*/
-    if((position < 10000) &&
-       (position > 5000))
+    if((position <= 100000) &&
+       (position >= 50000))
     {
         PWM_write(pwm, position);
     }
 
-    me->max = 10000;
-    me->min = 5000;
+    me->max = 100000;
+    me->min = 50000;
     me->position = position;
     me->pwm = pwm;
 }
 
 void servo_set_position(servo_t * const me, uint32_t position)
 {
-    if((position < me->max) &&
-       (position > me->min))
+    if((position <= me->max) &&
+       (position >= me->min))
     {
         PWM_write(me->pwm, position);
         me->position = position;
