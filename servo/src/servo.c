@@ -1,5 +1,16 @@
 #include "servo.h"
 
+
+
+/******************************************************************
+ * \brief Servo constructor
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Servo object
+ * @param pwm           pwm device
+ * @param position      servo position
+ * @return None
+ *******************************************************************/
 void servo_ctor(servo_t * const me,
                 dev_t * const pwm,
                 uint32_t position)
@@ -23,6 +34,14 @@ void servo_ctor(servo_t * const me,
     me->pwm = pwm;
 }
 
+/******************************************************************
+ * \brief Servo set position
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Servo object
+ * @param position      servo position
+ * @return None
+ *******************************************************************/
 void servo_set_position(servo_t * const me, uint32_t position)
 {
     if((position <= me->max) &&
@@ -33,16 +52,39 @@ void servo_set_position(servo_t * const me, uint32_t position)
     }
 }
 
+/******************************************************************
+ * \brief Servo get position
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Servo object
+ * @return uint32_t     servo position
+ *******************************************************************/
 uint32_t servo_get_position(servo_t * const me)
 {
     return me->position;
 }
 
+/******************************************************************
+ * \brief Servo set max
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Servo object
+ * @param max           max value
+ * @return None         
+ *******************************************************************/
 void servo_set_max(servo_t * const me, uint32_t max)
 {
     me->max = max;
 }
 
+/******************************************************************
+ * \brief Servo set min
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Servo object
+ * @param max           min value
+ * @return None         
+ *******************************************************************/
 void servo_set_min(servo_t * const me, uint32_t min)
 {
     me->min = min;

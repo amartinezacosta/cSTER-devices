@@ -1,5 +1,13 @@
 #include "pid.h"
 
+/******************************************************************
+ * \brief Pid initialization
+ * 
+ * Detailed description starts here 
+ * @param me           pointer to PID object
+ * @param params       PID parameters
+ * @return None
+ *******************************************************************/
 void pid_init(PID_t * const me, PID_params_t *params)
 {
     me->params = params;
@@ -10,6 +18,15 @@ void pid_init(PID_t * const me, PID_params_t *params)
     me->prev_measurement = 0.0;
 }
 
+/******************************************************************
+ * \brief Pid initialization
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to PID object
+ * @param measurement   measurement for adjustmnet 
+ * @param dt            delta time
+ * @return float       pid update output
+ *******************************************************************/
 float pid_update(PID_t * const me, float measurement, float dt)
 {
     me->error = me->reference - measurement;
@@ -37,11 +54,27 @@ float pid_update(PID_t * const me, float measurement, float dt)
     return output;
 }
 
+/******************************************************************
+ * \brief Pid set reference point
+ * 
+ * Detailed description starts here 
+ * @param   me          pointer to PID object
+ * @param   reference   value to set PID controller
+ * @return None
+ *******************************************************************/
 void pid_set_reference(PID_t * const me, float reference)
 {
     me->reference = reference;
 }
 
+
+/******************************************************************
+ * \brief PID reached
+ * 
+ * Detailed description starts here 
+ * @param   me          pointer to PID object
+ * @return  bool        PID reached
+ *******************************************************************/
 bool pid_reached(PID_t * const me)
 {
     bool result = false;

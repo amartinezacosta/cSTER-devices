@@ -2,6 +2,18 @@
 
 void encoder_callback(void **args, uint32_t argc);
 
+/******************************************************************
+ * \brief Motor constructor
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @param pwm0          pwm0 channel A
+ * @param pwm1          pwm1 channel B
+ * @param gpio0         encoder A
+ * @param gpio1         encoder B
+ * @param gpio_sleep    motor sleep
+ * @return None
+ *******************************************************************/
 void motor_ctor(motor_t * const me,
                 dev_t *pwm0,
                 dev_t *pwm1,
@@ -33,16 +45,39 @@ void motor_ctor(motor_t * const me,
     me->min_speed = 7500;
 }
 
+/******************************************************************
+ * \brief Motor enable
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @return None
+ *******************************************************************/
 void motor_enable(motor_t * const me)
 {
     GPIO_write(me->gpio_sleep, GPIO_STATE_HIGH);
 }
 
+/******************************************************************
+ * \brief Motor disable
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @return None
+ *******************************************************************/
 void motor_disable(motor_t * const me)
 {
     GPIO_write(me->gpio_sleep, GPIO_STATE_LOW);
 }
 
+/******************************************************************
+ * \brief Motor speed
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @param speed         motor speed 
+ * @param direction     motor direction
+ * @return None
+ *******************************************************************/
 void motor_speed(motor_t * const me,
                  uint32_t const speed,
                  uint32_t const direction)
@@ -66,17 +101,38 @@ void motor_speed(motor_t * const me,
     }
 }
 
+/******************************************************************
+ * \brief Motor stop
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @return None
+ *******************************************************************/
 void motor_stop(motor_t * const me)
 {
     PWM_write(me->pwm0, 0);
     PWM_write(me->pwm1, 0);
 }
 
+/******************************************************************
+ * \brief Motor position
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @return int32_t      notor position
+ *******************************************************************/
 int32_t motor_position(motor_t * const me)
 {
     return me->count;
 }
 
+/******************************************************************
+ * \brief Motor position delta
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to Motor object
+ * @return int32_t      motor position 
+ *******************************************************************/
 int32_t motor_position_delta(motor_t * const me)
 {
     int32_t count = me->count;

@@ -3,8 +3,22 @@
 
 #include <Capture_HAL.h>
 
-#define MAX_PPM_CHANNEL_COUNT  16
+#define MAX_PPM_CHANNEL_COUNT  16   /*!< MAX PPM Channels */
 
+/******************************************************************
+ * \struct ppm_t ppm.h 
+ * \brief PPM object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      dev_t *dev;
+ *      uint32_t channels[MAX_PPM_CHANNEL_COUNT];
+ *      volatile uint32_t index;
+ *      uint32_t count;
+ * }ppm_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     dev_t *dev;
