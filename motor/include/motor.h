@@ -4,9 +4,31 @@
 #include <PWM_HAL.h>
 #include <GPIO_HAL.h>
 
-#define CLOCKWISE               0
-#define COUNTER_CLOCKWISE       1
+#define CLOCKWISE               0   /*!< Motor Clockwise */
+#define COUNTER_CLOCKWISE       1   /*!< Motor Counter-Clockwise */
 
+/******************************************************************
+ * \struct motor_t motor.h 
+ * \brief Motor object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      // Peripherals
+ *      dev_t *pwm0;
+ *      dev_t *pwm1;
+ *      dev_t *gpio0;
+ *      dev_t *gpio1;
+ *      dev_t *gpio_sleep;
+ *      // Encoder variables
+ *      int32_t count;
+ *      int32_t prev_count;
+ *      int32_t delta_count;
+ *      uint8_t state;
+ *      uint32_t min_speed;
+ * }motor_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     /*Peripherals*/

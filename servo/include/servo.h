@@ -3,6 +3,20 @@
 
 #include <PWM_HAL.h>
 
+/******************************************************************
+ * \struct servo_t servo.h 
+ * \brief Servo object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      dev_t *pwm;
+ *      uint32_t max;
+ *      uint32_t min;
+ *      uint32_t position;
+ * }servo_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     dev_t *pwm;
