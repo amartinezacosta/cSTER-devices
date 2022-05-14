@@ -1,7 +1,8 @@
 # cSTER Devices DC Brushed Motor with Encoders Library
 
-
-![](@ref ../resources/images/cSTER_logo.png)
+<p align="center">
+  <img src="../resources/images/cSTER_logo.png" />
+</p>
 
 ## Description
 This section contains the device drivers for Motor with encoders, and PID controller. There are few examples in  `examples`
