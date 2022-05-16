@@ -59,12 +59,41 @@
 
 #define MQTT_MAX_CALLBACKS     10
 
+
+
+/******************************************************************
+ * \struct mqtt_callback_t mqtt.h 
+ * \brief Mqtt callback object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      char const *topic;
+ *      void(*callback)(uint8_t const *, uint32_t);
+ * }mqqt_callback_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     char const *topic;
     void(*callback)(uint8_t const *, uint32_t);
 }mqtt_callback_t;
 
+
+/******************************************************************
+ * \struct mqtt_t mqtt.h 
+ * \brief Mqtt object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      wizfi_t *client;
+ *      uint32_t state;
+ *      uint32_t callbacks_count;
+ *      mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS]l
+ * }mqtt_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     wizfi_t *client;
@@ -74,6 +103,7 @@ typedef struct
     uint32_t callbacks_count;
     mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS];
 }mqtt_t;
+
 
 void mqtt_ctor(mqtt_t * const me, wizfi_t * const client);
 int32_t mqtt_connect(mqtt_t *const me,

@@ -16,6 +16,17 @@
 #define WIZFI360_CONNECT                    4
 #define WIZFI360_DELIMITER_FOUND            5
 
+/******************************************************************
+ * \struct wizfi_t wizfi360.h 
+ * \brief Wizfi object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      char_devio_t com;
+ * }wizfi_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     char_devio_t com;
