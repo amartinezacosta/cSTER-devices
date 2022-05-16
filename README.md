@@ -1,11 +1,8 @@
-<!-- Replace w/doxygen images -->
-<!-- @image html cSTER_logo.png
-@image latex cSTER_logo.png -->
-
 <br />
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
-    <img src="resources/images/cSTER_logo.png" alt="Logo">
+    <!-- ![](cSTER_logo.png) --> <!--Using image path in Doxyfile-->
+ <img src="resources/images/cSTER_logo.png" alt="Logo">
   </a>
 
   <h3 align="center">cSTER devices library for Cortex M4F microcontrollers</h3>
@@ -118,3 +115,4 @@ This project was developed in C programming language.
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
 ## Acknowledgments
+
