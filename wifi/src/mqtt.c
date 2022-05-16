@@ -2,6 +2,15 @@
 
 //static uint32_t mqtt_encode_lenght(uint32_t size);
 
+
+/******************************************************************
+ * \brief Mqtt constructor
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param client        pointer to wizfi object
+ * @return None
+ *******************************************************************/
 void mqtt_ctor(mqtt_t * const me, wizfi_t * const client)
 {
     me->client = client;
@@ -9,6 +18,15 @@ void mqtt_ctor(mqtt_t * const me, wizfi_t * const client)
     me->keep_alive = 60;
 }
 
+/******************************************************************
+ * \brief Mqtt register
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param topic         topic string
+ * @param mqtt_callback callback 
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_register(mqtt_t * const me,
                       char const *topic,
                       void(*mqtt_callback)(uint8_t const *, uint32_t))
@@ -22,6 +40,16 @@ int32_t mqtt_register(mqtt_t * const me,
     return 0;
 }
 
+/******************************************************************
+ * \brief Mqtt connect
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param client_id     client id
+ * @param address       address
+ * @param port          port number 
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_connect(mqtt_t *const me,
                      char const *client_id,
                      const char *address,
@@ -97,6 +125,16 @@ int32_t mqtt_connect(mqtt_t *const me,
     return result;
 }
 
+/******************************************************************
+ * \brief Mqtt publish
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param topic         topic string
+ * @param payload       payload array
+ * @param payload_size  payload_size
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_publish(mqtt_t * const me, char const *topic,
                      uint8_t const *payload, uint32_t payload_size)
 {
@@ -145,6 +183,14 @@ int32_t mqtt_publish(mqtt_t * const me, char const *topic,
     return status;
 }
 
+/******************************************************************
+ * \brief Mqtt subscribe
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param topic         topic string
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
 {
     uint8_t packet[64];
@@ -200,6 +246,14 @@ int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
     return status;
 }
 
+
+/******************************************************************
+ * \brief Mqtt loop
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_loop(mqtt_t * const me)
 {
     uint8_t data[64];
