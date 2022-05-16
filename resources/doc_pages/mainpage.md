@@ -1,6 +1,8 @@
 ### Main Page
 
-\image html cSTER_logo.png
+<!-- Replace w/doxygen images -->
+<!-- @image html cSTER_logo.png
+@image latex cSTER_logo.png -->
 
 ## Description
 

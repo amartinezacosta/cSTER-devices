@@ -36,7 +36,7 @@ typedef struct
 
 
 /******************************************************************
- * \struct PID_params_t pid.h 
+ * \struct PID_t pid.h 
  * \brief PID object
  * 
  * ### Example

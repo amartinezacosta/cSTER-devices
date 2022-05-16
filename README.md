@@ -1,3 +1,7 @@
+<!-- Replace w/doxygen images -->
+<!-- @image html cSTER_logo.png
+@image latex cSTER_logo.png -->
+
 <br />
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
