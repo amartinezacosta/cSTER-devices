@@ -2,7 +2,7 @@
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
     <!-- ![](cSTER_logo.png) --> <!--Using image path in Doxyfile-->
- <img src="resources/images/cSTER_logo.png" alt="Logo">
+ <img src="../resources/images/cSTER_logo.png" alt="Logo">
   </a>
 </div>
 
