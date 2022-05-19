@@ -3,7 +3,7 @@
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
     <!-- ![](cSTER_logo.png) --> <!--Using image path in Doxyfile-->
- <img src="resources/images/cSTER_logo.png" alt="Logo">
+ <img src="cSTER_logo.png" alt="Logo">
   </a>
 
   <h3 align="center">cSTER devices library for Cortex M4F microcontrollers</h3>
