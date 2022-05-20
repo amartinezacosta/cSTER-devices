@@ -15,7 +15,7 @@ set(WIFI_SRC_FILES      wifi/src/wizfi360-pa/wizfi360.c
                         wifi/src/mqtt.c
                         )
 #Include Files
-set(CSTER_DRIVERS_INCLUDE_PATH ../cSTER-drivers/include/)
+set(CSTER_DRIVERS_INCLUDE_PATH cSTER-drivers/include/)
 set(MOTOR_INCLUDE_PATH   motor/include/)
 set(PPM_INCLUDE_PATH     ppm/include/)
 set(SERVO_INCLUDE_PATH   servo/include/)
