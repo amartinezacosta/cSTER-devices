@@ -1,8 +1,9 @@
+# cSTER devices
 <br />
 <div align="center">
   <a href="https://github.com/amartinezacosta/cSTER-devices">
     <!-- ![](cSTER_logo.png) --> <!--Using image path in Doxyfile-->
- <img src="resources/images/cSTER_logo.png" alt="Logo">
+ <img src="cSTER_logo.png" alt="Logo">
   </a>
 
   <h3 align="center">cSTER devices library for Cortex M4F microcontrollers</h3>
@@ -49,24 +50,6 @@ cd build
 cmake -DCMAKE_MAKE_PROGRAM=make.exe -G "Unix Makefiles" ..
 make
 ```
-
-### Examples
-Tell people how to find examples and how to look for the register level code
-
-* [**Motor**](https://github.com/amartinezacosta/cSTER-devices/tree/main/motor)
-  * motor_with_pid.c
-  * multiple_motor_example.c
-  * multiple_motor_pid_experiment.c        
-  * pid_experiment.c                
-  * single_motor_example.c
-  * step_reponse.c
-* [**PPM**](https://github.com/amartinezacosta/cSTER-devices/tree/main/ppm)
-  * ppm_radio_link.c
-* [**Servo**](https://github.com/amartinezacosta/cSTER-devices/tree/main/servo)
-  * servo_example.c
-* [**WiFi**](https://github.com/amartinezacosta/cSTER-devices/tree/main/wifi)
-  * [***wizfi360***](https://github.com/amartinezacosta/cSTER-devices/tree/main/wifi/src/wizfi360-pa)
-  * mqtt.c
 
 ## Help
 
