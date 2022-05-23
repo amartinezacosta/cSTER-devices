@@ -1,7 +1,7 @@
 <map id="motor/examples/multiple_motor_example.c" name="motor/examples/multiple_motor_example.c">
-<area shape="rect" id="node1" title=" " alt="" coords="28,5,191,47"/>
+<area shape="rect" id="node1" title="Multiple motors device example." alt="" coords="28,5,191,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="60,169,159,196"/>
-<area shape="rect" id="node4" href="$motor_8h.html" title=" " alt="" coords="147,95,213,121"/>
+<area shape="rect" id="node4" href="$motor_8h.html" title="Motor device library." alt="" coords="147,95,213,121"/>
 <area shape="rect" id="node5" title=" " alt="" coords="183,169,281,196"/>
 </map>

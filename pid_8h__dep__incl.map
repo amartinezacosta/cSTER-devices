@@ -1,8 +1,8 @@
 <map id="motor/include/pid.h" name="motor/include/pid.h">
-<area shape="rect" id="node1" title=" " alt="" coords="381,5,511,32"/>
-<area shape="rect" id="node2" href="$motor__with__pid_8c.html" title=" " alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node3" href="$multiple__motors__pid__experiment_8c.html" title=" " alt="" coords="181,80,354,121"/>
-<area shape="rect" id="node4" href="$pid__experiment_8c.html" title=" " alt="" coords="379,80,513,121"/>
-<area shape="rect" id="node5" href="$step__response_8c.html" title=" " alt="" coords="537,80,680,121"/>
-<area shape="rect" id="node6" href="$pid_8c.html" title=" " alt="" coords="704,87,812,114"/>
+<area shape="rect" id="node1" title="PID controller library." alt="" coords="381,5,511,32"/>
+<area shape="rect" id="node2" href="$motor__with__pid_8c.html" title="Motor device example using PID controller driver." alt="" coords="5,80,156,121"/>
+<area shape="rect" id="node3" href="$multiple__motors__pid__experiment_8c.html" title="Multiple Motor devices example using PIDs controller driver." alt="" coords="181,80,354,121"/>
+<area shape="rect" id="node4" href="$pid__experiment_8c.html" title="PID controller testing example code." alt="" coords="379,80,513,121"/>
+<area shape="rect" id="node5" href="$step__response_8c.html" title="Step response example code." alt="" coords="537,80,680,121"/>
+<area shape="rect" id="node6" href="$pid_8c.html" title="PID controller source code." alt="" coords="704,87,812,114"/>
 </map>

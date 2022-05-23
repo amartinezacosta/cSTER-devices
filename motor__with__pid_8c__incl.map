@@ -1,8 +1,8 @@
 <map id="motor/examples/motor_with_pid.c" name="motor/examples/motor_with_pid.c">
-<area shape="rect" id="node1" title=" " alt="" coords="142,5,293,47"/>
+<area shape="rect" id="node1" title="Motor device example using PID controller driver." alt="" coords="142,5,293,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="53,95,120,121"/>
-<area shape="rect" id="node3" href="$motor_8h.html" title=" " alt="" coords="145,95,210,121"/>
-<area shape="rect" id="node6" href="$pid_8h.html" title=" " alt="" coords="234,95,283,121"/>
+<area shape="rect" id="node3" href="$motor_8h.html" title="Motor device library." alt="" coords="145,95,210,121"/>
+<area shape="rect" id="node6" href="$pid_8h.html" title="PID controller library." alt="" coords="234,95,283,121"/>
 <area shape="rect" id="node8" title=" " alt="" coords="307,95,421,121"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,169,104,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="128,169,227,196"/>

@@ -1,6 +1,6 @@
 <map id="wifi/include/mqtt.h" name="wifi/include/mqtt.h">
-<area shape="rect" id="node1" title=" " alt="" coords="240,5,367,32"/>
-<area shape="rect" id="node2" href="$wizfi360_8h.html" title=" " alt="" coords="264,80,343,107"/>
+<area shape="rect" id="node1" title="MQTT protocol library." alt="" coords="240,5,367,32"/>
+<area shape="rect" id="node2" href="$wizfi360_8h.html" title="Wizfi360 WiFi Module library." alt="" coords="264,80,343,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,108,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="132,155,245,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="270,155,337,181"/>

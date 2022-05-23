@@ -33,33 +33,29 @@ var NAVTREE =
       [ "Description", "md_ppm__r_e_a_d_m_e.html#autotoc_md8", null ],
       [ "Examples", "md_ppm__r_e_a_d_m_e.html#autotoc_md9", null ]
     ] ],
-    [ "cSTER devices", "md__r_e_a_d_m_e.html", [
-      [ "Description", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
-      [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md12", [
-        [ "Dependencies", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-        [ "Installing using cmake", "md__r_e_a_d_m_e.html#autotoc_md14", null ]
+    [ "cSTER devices", "md_resources_doc_pages_mainpage.html", [
+      [ "Description", "md_resources_doc_pages_mainpage.html#autotoc_md11", null ],
+      [ "Getting Started", "md_resources_doc_pages_mainpage.html#autotoc_md12", [
+        [ "Dependencies", "md_resources_doc_pages_mainpage.html#autotoc_md13", null ],
+        [ "Installing using cmake", "md_resources_doc_pages_mainpage.html#autotoc_md14", null ]
       ] ],
-      [ "Help", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-      [ "Authors", "md__r_e_a_d_m_e.html#autotoc_md16", null ],
-      [ "Development", "md__r_e_a_d_m_e.html#autotoc_md17", [
-        [ "Table 1 Arm Cortex M4F Microcontrollers", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
-        [ "Table 2 Software Development", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+      [ "Help", "md_resources_doc_pages_mainpage.html#autotoc_md15", null ],
+      [ "Authors", "md_resources_doc_pages_mainpage.html#autotoc_md16", null ],
+      [ "Development", "md_resources_doc_pages_mainpage.html#autotoc_md17", [
+        [ "Table 1 Arm Cortex M4F Microcontrollers", "md_resources_doc_pages_mainpage.html#autotoc_md18", null ],
+        [ "Table 2 Software Development", "md_resources_doc_pages_mainpage.html#autotoc_md19", null ]
       ] ],
-      [ "Software", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
-      [ "Version History", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-      [ "License", "md__r_e_a_d_m_e.html#autotoc_md22", null ],
-      [ "Acknowledgments", "md__r_e_a_d_m_e.html#autotoc_md23", null ]
-    ] ],
-    [ "Main Page", "md_resources_doc_pages_mainpage.html", [
-      [ "Description", "md_resources_doc_pages_mainpage.html#autotoc_md25", null ],
-      [ "Authors", "md_resources_doc_pages_mainpage.html#autotoc_md26", null ]
+      [ "Software", "md_resources_doc_pages_mainpage.html#autotoc_md20", null ],
+      [ "Version History", "md_resources_doc_pages_mainpage.html#autotoc_md21", null ],
+      [ "License", "md_resources_doc_pages_mainpage.html#autotoc_md22", null ],
+      [ "Acknowledgments", "md_resources_doc_pages_mainpage.html#autotoc_md23", null ]
     ] ],
     [ "cSTER Devices Servo Library", "md_servo__r_e_a_d_m_e.html", [
-      [ "Description", "md_servo__r_e_a_d_m_e.html#autotoc_md29", null ],
-      [ "Examples", "md_servo__r_e_a_d_m_e.html#autotoc_md30", null ]
+      [ "Description", "md_servo__r_e_a_d_m_e.html#autotoc_md26", null ],
+      [ "Examples", "md_servo__r_e_a_d_m_e.html#autotoc_md27", null ]
     ] ],
     [ "cSTER Devices Wi-Fi Module Library", "md_wifi__r_e_a_d_m_e.html", [
-      [ "Description", "md_wifi__r_e_a_d_m_e.html#autotoc_md35", null ]
+      [ "Description", "md_wifi__r_e_a_d_m_e.html#autotoc_md32", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -91,7 +87,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structmqtt__callback__t.html"
+"structmqtt__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

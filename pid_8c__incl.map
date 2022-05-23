@@ -1,5 +1,5 @@
 <map id="motor/src/pid.c" name="motor/src/pid.c">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,113,32"/>
-<area shape="rect" id="node2" href="$pid_8h.html" title=" " alt="" coords="35,80,84,107"/>
+<area shape="rect" id="node1" title="PID controller source code." alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node2" href="$pid_8h.html" title="PID controller library." alt="" coords="35,80,84,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="22,155,97,181"/>
 </map>
