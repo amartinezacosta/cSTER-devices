@@ -1,6 +1,15 @@
+/**
+ * @file servo.c
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief Servo device source code
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "servo.h"
-
-
 
 /******************************************************************
  * \brief Servo constructor
