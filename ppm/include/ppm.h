@@ -1,3 +1,14 @@
+/**
+ * @file ppm.h
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief PPM device library
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef PPM_H_
 #define PPM_H_
 
