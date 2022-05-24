@@ -12,9 +12,15 @@ def main(port, baudrate, file_name, timeout):
             (port, baudrate, file_name, timeout))
         
     data = []
-    
+       
     with serial.Serial(port, baudrate, timeout=1) as ser:
-     
+        while True:
+            c = input('Enter character to start: ')
+            if c:
+                ser.write(c.encode('utf-8'))
+                ser.read()
+                break
+        
         start_time = time.time()
         exit = False
         while ((time.time() - start_time) < timeout) and not exit:

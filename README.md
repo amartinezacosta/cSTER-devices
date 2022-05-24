@@ -18,10 +18,10 @@
 ## Description
 
 The cSTER drivers will help you get started writing applications using device hardware such as
-* Motor with encoders
-* WizFi360-PA
-* Pulse Position Modulation (PPM) 
-* Servo
+* [Motor with encoders](https://github.com/amartinezacosta/cSTER-devices/tree/main/motor)
+* [WizFi360-PA](https://github.com/amartinezacosta/cSTER-devices/tree/main/wifi)
+* [Pulse Position Modulation (PPM)](https://github.com/amartinezacosta/cSTER-devices/tree/main/ppm)
+* [Servo](https://github.com/amartinezacosta/cSTER-devices/tree/main/servo)
 
 ## Getting Started
 

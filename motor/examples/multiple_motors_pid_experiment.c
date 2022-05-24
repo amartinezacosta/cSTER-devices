@@ -1,3 +1,14 @@
+/**
+ * @file multiple_motors_pid_experiment.c
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief Multiple Motor devices example using PIDs controller driver
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <logger.h>
 #include <SysTick_HAL.h>
 #include <math.h>

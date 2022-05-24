@@ -29,13 +29,13 @@ def main(file_name, combined, degree, rads, value):
     print(f'Filename: {file_name}, Value: {value}, '\
           f'Degrees: {degree}, Radians: {rads}, Combined: {combined}')
 
-    # time,pwm,ticks,delta_ticks table names
-    if 'time' and 'pwm' and 'delta_ticks' and 'ticks' in data.columns:
+    # time,pwm_input,ticks,delta_ticks table names
+    if 'time' and 'pwm_input' and 'delta_ticks' and 'ticks' in data.columns:
 
         print("Generating plots..")
 
         # Plot and store pwm_input
-        data.plot(x='time', y='pwm', kind='line')
+        data.plot(x='time', y='pwm_input', kind='line')
         plt.xlabel('Time', fontsize=10, fontweight='bold')
         plt.ylabel('PWM Input', fontsize=10, fontweight='bold')
         plt.savefig('pwm_with_time.png')
@@ -45,8 +45,8 @@ def main(file_name, combined, degree, rads, value):
         plt.ylabel('Tick position', fontsize=10, fontweight='bold')
         plt.savefig('ticks_with_time.png')
 
-        # Plot pwm input with delta
-        data.plot(x='delta_ticks', y='pwm', kind='line')
+        # Plot pwm_input input with delta
+        data.plot(x='delta_ticks', y='pwm_input', kind='line')
         plt.xlabel('Delta time', fontsize=10, fontweight='bold')
         plt.ylabel('PWM Input', fontsize=10, fontweight='bold')
         plt.savefig('pwm_with_delta.png')
@@ -59,7 +59,7 @@ def main(file_name, combined, degree, rads, value):
 
         if combined:
             # combined graph
-            data.plot(x='delta_ticks', y=['pwm','ticks'], kind='line')
+            data.plot(x='delta_ticks', y=['pwm_input','ticks'], kind='line')
             plt.xlabel('Delta time', fontsize=10, fontweight='bold')
             plt.ylabel('Tick position', fontsize=10, fontweight='bold')
             plt.savefig('tick_input_with_delta_combined.png')
@@ -80,3 +80,5 @@ def main(file_name, combined, degree, rads, value):
 
 if __name__=="__main__":
     main()
+
+
