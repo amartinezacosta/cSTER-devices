@@ -33,30 +33,48 @@ var NAVTREE =
       [ "Description", "md_ppm__r_e_a_d_m_e.html#autotoc_md8", null ],
       [ "Examples", "md_ppm__r_e_a_d_m_e.html#autotoc_md9", null ]
     ] ],
+    [ "Devices Documentation", "md_resources_doc_pages_devices_documentation.html", [
+      [ "Motor", "md_resources_doc_pages_devices_documentation.html#autotoc_md11", [
+        [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md12", null ],
+        [ "Quick Tutorial", "md_resources_doc_pages_devices_documentation.html#autotoc_md13", null ]
+      ] ],
+      [ "Pulse-Position Modulation (PPM)", "md_resources_doc_pages_devices_documentation.html#autotoc_md14", [
+        [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md15", null ],
+        [ "Quick Tutorial", "md_resources_doc_pages_devices_documentation.html#autotoc_md16", null ]
+      ] ],
+      [ "Servo", "md_resources_doc_pages_devices_documentation.html#autotoc_md17", [
+        [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md18", null ],
+        [ "Quick Tutorial", "md_resources_doc_pages_devices_documentation.html#autotoc_md19", null ]
+      ] ],
+      [ "WiFi", "md_resources_doc_pages_devices_documentation.html#autotoc_md20", [
+        [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md21", null ]
+      ] ]
+    ] ],
     [ "cSTER devices", "md_resources_doc_pages_mainpage.html", [
-      [ "Description", "md_resources_doc_pages_mainpage.html#autotoc_md11", null ],
-      [ "Getting Started", "md_resources_doc_pages_mainpage.html#autotoc_md12", [
-        [ "Dependencies", "md_resources_doc_pages_mainpage.html#autotoc_md13", null ],
-        [ "Installing using cmake", "md_resources_doc_pages_mainpage.html#autotoc_md14", null ]
+      [ "Description", "md_resources_doc_pages_mainpage.html#autotoc_md23", null ],
+      [ "Getting Started", "md_resources_doc_pages_mainpage.html#autotoc_md24", [
+        [ "Dependencies", "md_resources_doc_pages_mainpage.html#autotoc_md25", null ],
+        [ "Installing using cmake", "md_resources_doc_pages_mainpage.html#autotoc_md26", null ]
       ] ],
-      [ "Help", "md_resources_doc_pages_mainpage.html#autotoc_md15", null ],
-      [ "Authors", "md_resources_doc_pages_mainpage.html#autotoc_md16", null ],
-      [ "Development", "md_resources_doc_pages_mainpage.html#autotoc_md17", [
-        [ "Table 1 Arm Cortex M4F Microcontrollers", "md_resources_doc_pages_mainpage.html#autotoc_md18", null ],
-        [ "Table 2 Software Development", "md_resources_doc_pages_mainpage.html#autotoc_md19", null ]
+      [ "Help", "md_resources_doc_pages_mainpage.html#autotoc_md27", null ],
+      [ "Authors", "md_resources_doc_pages_mainpage.html#autotoc_md28", null ],
+      [ "Development", "md_resources_doc_pages_mainpage.html#autotoc_md29", [
+        [ "Table 1 Arm Cortex M4F Microcontrollers", "md_resources_doc_pages_mainpage.html#autotoc_md30", null ],
+        [ "Table 2 Software Development", "md_resources_doc_pages_mainpage.html#autotoc_md31", null ]
       ] ],
-      [ "Software", "md_resources_doc_pages_mainpage.html#autotoc_md20", null ],
-      [ "Version History", "md_resources_doc_pages_mainpage.html#autotoc_md21", null ],
-      [ "License", "md_resources_doc_pages_mainpage.html#autotoc_md22", null ],
-      [ "Acknowledgments", "md_resources_doc_pages_mainpage.html#autotoc_md23", null ]
+      [ "Software", "md_resources_doc_pages_mainpage.html#autotoc_md32", null ],
+      [ "Version History", "md_resources_doc_pages_mainpage.html#autotoc_md33", null ],
+      [ "License", "md_resources_doc_pages_mainpage.html#autotoc_md34", null ],
+      [ "Acknowledgments", "md_resources_doc_pages_mainpage.html#autotoc_md35", null ]
     ] ],
     [ "cSTER Devices Servo Library", "md_servo__r_e_a_d_m_e.html", [
-      [ "Description", "md_servo__r_e_a_d_m_e.html#autotoc_md26", null ],
-      [ "Examples", "md_servo__r_e_a_d_m_e.html#autotoc_md27", null ]
+      [ "Description", "md_servo__r_e_a_d_m_e.html#autotoc_md38", null ],
+      [ "Examples", "md_servo__r_e_a_d_m_e.html#autotoc_md39", null ]
     ] ],
     [ "cSTER Devices Wi-Fi Module Library", "md_wifi__r_e_a_d_m_e.html", [
-      [ "Description", "md_wifi__r_e_a_d_m_e.html#autotoc_md32", null ]
+      [ "Description", "md_wifi__r_e_a_d_m_e.html#autotoc_md44", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -87,7 +105,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structmqtt__t.html"
+"structmotor__t.html#a0dd15f3e9a1ba2ef3f5cc27101d2d538"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
