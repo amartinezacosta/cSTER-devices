@@ -15,14 +15,17 @@
 
 int main(void)
 {
+    /*Find Servo device*/
     dev_t *pwm = HAL_find_name("PWM_0");
     HAL_ASSERT_MODULE_NAME(pwm, "main");
-
+    
+    /*Create an instance of Servo object*/
     servo_t servo;
     servo_ctor(&servo, pwm, 5000);
 
     while(1)
     {
+        /*Set Servo posistion*/
         servo_set_position(&servo, 5000);
         SysTick_delay(2000);
         servo_set_position(&servo, 10000);
