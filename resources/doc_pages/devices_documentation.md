@@ -29,6 +29,8 @@ Motor are devices that are control by using `PWM` inorder to change its polarity
     |motor_position()           | Get motor position                  |
     |motor_position_delta()     | Get previous motor                  |
 
+@see \ref motor
+
 ### Quick Tutorial
 This section will demostrate how to use motor.h to create simple **motor** application. The following code is a single **motor** moving at *50%* speed and rotating `clockwise`.
 ```c
@@ -81,7 +83,7 @@ int main(void)
 }
 ```
 
-@see [Motor Guide](@ref motor/README.md)
+@see [Motor Guide](@ref resources/doc_pages/motor.md)
 
 ## Pulse-Position Modulation (PPM)  
 ### Description
@@ -92,6 +94,8 @@ int main(void)
     |:---                   | :---                              |
     |ppm_ctor()             | Create an instance of PPM object  |
     |ppm_get_channels()     | Capture channels readings         |
+
+@see \ref ppm
 
 ### Quick Tutorial
 This section will demostrate how to use ppm.h to create simple **ppm radio link** application. The following code is reading a **ppm radio link** and display capture value through custom *logger*.
@@ -129,7 +133,7 @@ int main(void)
 }
 ```
 
-@see [PPM Guide](@ref ppm/README.md)
+@see [PPM Guide](@ref resources/doc_pages/ppm.md)
 
 ## Servo
 ### Description
@@ -143,6 +147,8 @@ Servo are devices that are control by using `PWM` inorder to change its angle. W
     |servo_get_position()  | Get servo position                  |
     |servo_set_max()       | Set servo max value                 |
     |servo_set_min()       | Set servo max value                 |
+
+@see \ref servo
 
 ### Quick Tutorial
 This section will demostrate how to use servo.h to create simple **servo** application. The following code is a single **servo** moving from `5%` to `10%` duty cycle and vice-versa.
@@ -171,9 +177,12 @@ int main(void)
     }
 }
 ```
-@see [Servo Guide](@ref servo/README.md)
+@see [Servo Guide](@ref resources/doc_pages/servo.md)
 
 ## WiFi
 ### Description
 \todo Add Description Tutorial
+@see \ref wifi
+
 \todo Add Quick Tutorial
+@see [WiFi Guide](@ref resources/doc_pages/wifi.md)
