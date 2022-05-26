@@ -17,3 +17,5 @@ which demostrate different applications of motors, encoders, and PID.
 - pid_experiment.c
 - single_motor_example.c
 - step_reponse.c
+
+@see [Motor Files](@ref motor)
