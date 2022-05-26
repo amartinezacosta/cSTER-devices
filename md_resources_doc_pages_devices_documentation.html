@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('md_resources_doc_pages_devices_documen
 <div class="contents">
 <div class="textblock"><p ><br  />
  </p><div align="center"> <a href="https://github.com/amartinezacosta/cSTER-devices"><img src="cSTER_logo.png" alt="Logo" class="inline"/> </a></div><div align="center"> <h3 align="center">cSTER devices library for Cortex M4F microcontrollers</h3>
-</div><div align="center"></div><div align="center"> </div><div align="center"> Drivers for hardware devices using the cSTER drivers library </div><div align="center"> </div><h1><a class="anchor" id="autotoc_md11"></a>
+</div><div align="center"></div><div align="center"> </div><div align="center"> Drivers for hardware devices using the cSTER drivers library </div><div align="center"> </div><h1><a class="anchor" id="autotoc_md5"></a>
 Motor</h1>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Description</h2>
 <p >Motor are devices that are control by using <code>PWM</code> inorder to change its polarity or rotation direction. With the use of <em><b>cSTER-drivers</b></em>, creating a Motor devices is straight forward as the API has peripheral support for <code>PWM</code>. The <a class="el" href="motor_8h.html" title="Motor device library.">motor.h</a> has support for the most common operations for motors. Table 1 will list the Motor API function calls that are available.</p>
 <ul>
@@ -122,7 +122,8 @@ Description</h2>
 </table>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="dir_a69b099b9e2cc5cf8d4062951e0d7f85.html">motor</a></dd></dl>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Quick Tutorial</h2>
 <p >This section will demostrate how to use <a class="el" href="motor_8h.html" title="Motor device library.">motor.h</a> to create simple <b>motor</b> application. The following code is a single <b>motor</b> moving at <em>50%</em> speed and rotating <code>clockwise</code>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;logger.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="motor_8h.html">motor.h</a>&quot;</span></div>
@@ -179,10 +180,10 @@ Quick Tutorial</h2>
 <div class="ttc" id="amotor_8h_html_ab97a98583824a9ef7d480fe8fdca33cf"><div class="ttname"><a href="motor_8h.html#ab97a98583824a9ef7d480fe8fdca33cf">CLOCKWISE</a></div><div class="ttdeci">#define CLOCKWISE</div><div class="ttdef"><b>Definition:</b> motor.h:19</div></div>
 <div class="ttc" id="amotor__with__pid_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="motor__with__pid_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition:</b> motor_with_pid.c:19</div></div>
 <div class="ttc" id="astructmotor__t_html"><div class="ttname"><a href="structmotor__t.html">motor_t</a></div><div class="ttdoc">Motor object.</div><div class="ttdef"><b>Definition:</b> motor.h:45</div></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="md_motor__r_e_a_d_m_e.html">Motor Guide</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="md_resources_doc_pages_motor.html">Motor Guide</a></dd></dl>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Pulse-Position Modulation (PPM)</h1>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Description</h2>
 <p ><b>Pulse-Position Modulation (PPM)</b> is a modulation method that only makes every pulse in the carrier pulse sequence change with time but without changing the shape and amplitude of the pulse signal. With the use of <em><b>cSTER-drivers</b></em>, creating a ppm devices is straight forward as it requires <code>Timer Capture</code> to reading its signals. <em><b>cSTER-drivers</b></em> has peripheral support for <code>Timer Capture</code>. The <a class="el" href="ppm_8h.html" title="PPM device library.">ppm.h</a> has support to generate radio link. Table 2 will list the PPM API function calls that are available.</p>
 <ul>
@@ -196,7 +197,8 @@ Description</h2>
 </table>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="dir_6b79cac32a2ffd98966c249fdd02f3ba.html">ppm</a></dd></dl>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Quick Tutorial</h2>
 <p >This section will demostrate how to use <a class="el" href="ppm_8h.html" title="PPM device library.">ppm.h</a> to create simple <b>ppm radio link</b> application. The following code is reading a <b>ppm radio link</b> and display capture value through custom <em>logger</em>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ppm_8h.html">ppm.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;logger.h&gt;</span></div>
@@ -233,10 +235,10 @@ Quick Tutorial</h2>
 <div class="ttc" id="appm_8h_html_a27631c231a054de2401a5635953ecfc7"><div class="ttname"><a href="ppm_8h.html#a27631c231a054de2401a5635953ecfc7">ppm_ctor</a></div><div class="ttdeci">void ppm_ctor(ppm_t *const me, dev_t *const dev, uint32_t count)</div><div class="ttdoc">PPM constructor.</div><div class="ttdef"><b>Definition:</b> ppm.c:25</div></div>
 <div class="ttc" id="appm_8h_html_a8f295e00e5561115b13c3ef566cf1e21"><div class="ttname"><a href="ppm_8h.html#a8f295e00e5561115b13c3ef566cf1e21">ppm_get_channels</a></div><div class="ttdeci">void ppm_get_channels(ppm_t *const me, uint32_t *channels)</div><div class="ttdoc">PPM get channels.</div><div class="ttdef"><b>Definition:</b> ppm.c:49</div></div>
 <div class="ttc" id="astructppm__t_html"><div class="ttname"><a href="structppm__t.html">ppm_t</a></div><div class="ttdoc">PPM object.</div><div class="ttdef"><b>Definition:</b> ppm.h:34</div></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="md_ppm__r_e_a_d_m_e.html">PPM Guide</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md17"></a>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="md_resources_doc_pages_ppm.html">PPM Guide</a></dd></dl>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Servo</h1>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Description</h2>
 <p >Servo are devices that are control by using <code>PWM</code> inorder to change its angle. With the use of <em><b>cSTER-drivers</b></em>, creating a Servo devices is straight forward as the API has peripheral support for <code>PWM</code>. The <a class="el" href="servo_8h.html" title="Servo device library.">servo.h</a> has support for the most common operations for servos. Table 3 will list the Servo API function calls that are available.</p>
 <ul>
@@ -256,7 +258,8 @@ Description</h2>
 </table>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="dir_9e94c91128f2402217e3120e64a4fd79.html">servo</a></dd></dl>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Quick Tutorial</h2>
 <p >This section will demostrate how to use <a class="el" href="servo_8h.html" title="Servo device library.">servo.h</a> to create simple <b>servo</b> application. The following code is a single <b>servo</b> moving from <code>5%</code> to <code>10%</code> duty cycle and vice-versa. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;HAL.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;SysTick_HAL.h&gt;</span></div>
@@ -285,14 +288,15 @@ Quick Tutorial</h2>
 <div class="ttc" id="aservo_8h_html_a703a843e444919df61460ae4c49c0157"><div class="ttname"><a href="servo_8h.html#a703a843e444919df61460ae4c49c0157">servo_set_position</a></div><div class="ttdeci">void servo_set_position(servo_t *const me, uint32_t value)</div><div class="ttdoc">Servo set position.</div><div class="ttdef"><b>Definition:</b> servo.c:54</div></div>
 <div class="ttc" id="aservo_8h_html_a8062156d5ed1076c2bb34d680f3977d1"><div class="ttname"><a href="servo_8h.html#a8062156d5ed1076c2bb34d680f3977d1">servo_ctor</a></div><div class="ttdeci">void servo_ctor(servo_t *const me, dev_t *const pwm, uint32_t position)</div><div class="ttdoc">Servo constructor.</div><div class="ttdef"><b>Definition:</b> servo.c:23</div></div>
 <div class="ttc" id="astructservo__t_html"><div class="ttname"><a href="structservo__t.html">servo_t</a></div><div class="ttdoc">Servo object.</div><div class="ttdef"><b>Definition:</b> servo.h:32</div></div>
-</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="md_servo__r_e_a_d_m_e.html">Servo Guide</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md20"></a>
+</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="md_resources_doc_pages_servo.html">Servo Guide</a></dd></dl>
+<h1><a class="anchor" id="autotoc_md14"></a>
 WiFi</h1>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Description</h2>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Add Description Tutorial </p>
-<p class="enddd">Add Quick Tutorial </p>
-</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Add Description Tutorial </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="dir_a701b57a7c8453ceba64c1289f0b7340.html">wifi</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Add Quick Tutorial </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="md_resources_doc_pages_wifi.html">WiFi Guide</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
