@@ -81,7 +81,7 @@ int main(void)
 }
 ```
 
-@see [Motor Guide](@ref motor/README.md)
+@see [Motor Guide](@ref resources/doc_pages/motor.md)
 
 ## Pulse-Position Modulation (PPM)  
 ### Description
@@ -129,7 +129,7 @@ int main(void)
 }
 ```
 
-@see [PPM Guide](@ref ppm/README.md)
+@see [PPM Guide](@ref resources/doc_pages/ppm.md)
 
 ## Servo
 ### Description
@@ -171,7 +171,7 @@ int main(void)
     }
 }
 ```
-@see [Servo Guide](@ref servo/README.md)
+@see [Servo Guide](@ref resources/doc_pages/servo.md)
 
 ## WiFi
 ### Description
