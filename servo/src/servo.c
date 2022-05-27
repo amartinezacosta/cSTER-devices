@@ -1,4 +1,8 @@
 /**
+ * @dir servo/src
+ * @brief Servo device source code
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file servo.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
