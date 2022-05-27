@@ -25,6 +25,12 @@
 var NAVTREE =
 [
   [ "cSTER devices", "index.html", [
+    [ "Getting Started", "index.html#autotoc_md36", null ],
+    [ "Device Documentation", "index.html#autotoc_md37", null ],
+    [ "Help", "index.html#autotoc_md38", null ],
+    [ "GitHub Repository", "index.html#autotoc_md39", null ],
+    [ "Authors", "index.html#autotoc_md40", null ],
+    [ "License", "index.html#autotoc_md41", null ],
     [ "Devices Documentation", "md_resources_doc_pages_devices_documentation.html", [
       [ "Motor", "md_resources_doc_pages_devices_documentation.html#autotoc_md5", [
         [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md6", null ],
@@ -42,37 +48,45 @@ var NAVTREE =
         [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md15", null ]
       ] ]
     ] ],
-    [ "cSTER devices", "md_resources_doc_pages_mainpage.html", [
-      [ "Description", "md_resources_doc_pages_mainpage.html#autotoc_md17", null ],
-      [ "Getting Started", "md_resources_doc_pages_mainpage.html#autotoc_md18", [
-        [ "Dependencies", "md_resources_doc_pages_mainpage.html#autotoc_md19", null ],
-        [ "Installing using cmake", "md_resources_doc_pages_mainpage.html#autotoc_md20", null ]
+    [ "Getting Started", "md_resources_doc_pages_getting_started.html", [
+      [ "Dependencies", "md_resources_doc_pages_getting_started.html#autotoc_md17", null ],
+      [ "Installation", "md_resources_doc_pages_getting_started.html#autotoc_md18", [
+        [ "Table 1 Arm Cortex M4F Microcontrollers", "md_resources_doc_pages_getting_started.html#autotoc_md19", null ],
+        [ "Table 2 Software Development", "md_resources_doc_pages_getting_started.html#autotoc_md20", null ]
       ] ],
-      [ "Help", "md_resources_doc_pages_mainpage.html#autotoc_md21", null ],
-      [ "Authors", "md_resources_doc_pages_mainpage.html#autotoc_md22", null ],
-      [ "Development", "md_resources_doc_pages_mainpage.html#autotoc_md23", [
-        [ "Table 1 Arm Cortex M4F Microcontrollers", "md_resources_doc_pages_mainpage.html#autotoc_md24", null ],
-        [ "Table 2 Software Development", "md_resources_doc_pages_mainpage.html#autotoc_md25", null ]
+      [ "Generate Doxygen UML Graphs", "md_resources_doc_pages_getting_started.html#autotoc_md21", [
+        [ "MacOS", "md_resources_doc_pages_getting_started.html#autotoc_md22", [
+          [ "MacPort", "md_resources_doc_pages_getting_started.html#autotoc_md23", null ],
+          [ "Homebrew", "md_resources_doc_pages_getting_started.html#autotoc_md24", null ]
+        ] ],
+        [ "Linux", "md_resources_doc_pages_getting_started.html#autotoc_md25", null ],
+        [ "Windows", "md_resources_doc_pages_getting_started.html#autotoc_md26", null ]
       ] ],
-      [ "Software", "md_resources_doc_pages_mainpage.html#autotoc_md26", null ],
-      [ "Version History", "md_resources_doc_pages_mainpage.html#autotoc_md27", null ],
-      [ "License", "md_resources_doc_pages_mainpage.html#autotoc_md28", null ],
-      [ "Acknowledgments", "md_resources_doc_pages_mainpage.html#autotoc_md29", null ]
+      [ "Install Git", "md_resources_doc_pages_getting_started.html#autotoc_md27", [
+        [ "MacOS", "md_resources_doc_pages_getting_started.html#autotoc_md28", [
+          [ "MacPort", "md_resources_doc_pages_getting_started.html#autotoc_md29", null ],
+          [ "Homebrew", "md_resources_doc_pages_getting_started.html#autotoc_md30", null ],
+          [ "XCode", "md_resources_doc_pages_getting_started.html#autotoc_md31", null ]
+        ] ],
+        [ "Linux", "md_resources_doc_pages_getting_started.html#autotoc_md32", null ],
+        [ "Windows", "md_resources_doc_pages_getting_started.html#autotoc_md33", null ]
+      ] ],
+      [ "Workspace Setup", "md_resources_doc_pages_getting_started.html#autotoc_md34", null ]
     ] ],
     [ "cSTER Devices DC Brushed Motor with Encoders Library", "md_resources_doc_pages_motor.html", [
-      [ "Description", "md_resources_doc_pages_motor.html#autotoc_md31", null ],
-      [ "Examples", "md_resources_doc_pages_motor.html#autotoc_md32", null ]
+      [ "Description", "md_resources_doc_pages_motor.html#autotoc_md43", null ],
+      [ "Examples", "md_resources_doc_pages_motor.html#autotoc_md44", null ]
     ] ],
     [ "cSTER Devices Pulse Position Modulation (PPM) Library", "md_resources_doc_pages_ppm.html", [
-      [ "Description", "md_resources_doc_pages_ppm.html#autotoc_md34", null ],
-      [ "Examples", "md_resources_doc_pages_ppm.html#autotoc_md35", null ]
+      [ "Description", "md_resources_doc_pages_ppm.html#autotoc_md46", null ],
+      [ "Examples", "md_resources_doc_pages_ppm.html#autotoc_md47", null ]
     ] ],
     [ "cSTER Devices Servo Library", "md_resources_doc_pages_servo.html", [
-      [ "Description", "md_resources_doc_pages_servo.html#autotoc_md37", null ],
-      [ "Examples", "md_resources_doc_pages_servo.html#autotoc_md38", null ]
+      [ "Description", "md_resources_doc_pages_servo.html#autotoc_md49", null ],
+      [ "Examples", "md_resources_doc_pages_servo.html#autotoc_md50", null ]
     ] ],
     [ "cSTER Devices Wi-Fi Module Library", "md_resources_doc_pages_wifi.html", [
-      [ "Description", "md_resources_doc_pages_wifi.html#autotoc_md40", null ]
+      [ "Description", "md_resources_doc_pages_wifi.html#autotoc_md52", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -105,7 +119,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structmotor__t.html#a0dd15f3e9a1ba2ef3f5cc27101d2d538"
+"struct_p_i_d__params__t.html#afa8d148517a131130ffb7b9f0d1cfb6f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

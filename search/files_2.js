@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['pid_2ec_0',['pid.c',['../pid_8c.html',1,'']]],
-  ['pid_2eh_1',['pid.h',['../pid_8h.html',1,'']]],
-  ['pid_5fexperiment_2ec_2',['pid_experiment.c',['../pid__experiment_8c.html',1,'']]],
-  ['ppm_2ec_3',['ppm.c',['../ppm_8c.html',1,'']]],
-  ['ppm_2eh_4',['ppm.h',['../ppm_8h.html',1,'']]],
-  ['ppm_2emd_5',['ppm.md',['../ppm_8md.html',1,'']]],
-  ['ppm_5fradio_5flink_2ec_6',['ppm_radio_link.c',['../ppm__radio__link_8c.html',1,'']]]
+  ['mainpage_2emd_0',['mainpage.md',['../mainpage_8md.html',1,'']]],
+  ['motor_2ec_1',['motor.c',['../motor_8c.html',1,'']]],
+  ['motor_2eh_2',['motor.h',['../motor_8h.html',1,'']]],
+  ['motor_2emd_3',['motor.md',['../motor_8md.html',1,'']]],
+  ['motor_5fplot_2epy_4',['motor_plot.py',['../motor__plot_8py.html',1,'']]],
+  ['motor_5fwith_5fpid_2ec_5',['motor_with_pid.c',['../motor__with__pid_8c.html',1,'']]],
+  ['mqtt_2ec_6',['mqtt.c',['../mqtt_8c.html',1,'']]],
+  ['mqtt_2eh_7',['mqtt.h',['../mqtt_8h.html',1,'']]],
+  ['multiple_5fmotor_5fexample_2ec_8',['multiple_motor_example.c',['../multiple__motor__example_8c.html',1,'']]],
+  ['multiple_5fmotors_5fpid_5fexperiment_2ec_9',['multiple_motors_pid_experiment.c',['../multiple__motors__pid__experiment_8c.html',1,'']]]
 ];

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['serial_5fread_5ftest_2epy_0',['serial_read_test.py',['../serial__read__test_8py.html',1,'']]],
-  ['servo_2ec_1',['servo.c',['../servo_8c.html',1,'']]],
-  ['servo_2eh_2',['servo.h',['../servo_8h.html',1,'']]],
-  ['servo_2emd_3',['servo.md',['../servo_8md.html',1,'']]],
-  ['servo_5fexample_2ec_4',['servo_example.c',['../servo__example_8c.html',1,'']]],
-  ['single_5fmotor_5fexample_2ec_5',['single_motor_example.c',['../single__motor__example_8c.html',1,'']]],
-  ['step_5fresponse_2ec_6',['step_response.c',['../step__response_8c.html',1,'']]]
+  ['pid_2ec_0',['pid.c',['../pid_8c.html',1,'']]],
+  ['pid_2eh_1',['pid.h',['../pid_8h.html',1,'']]],
+  ['pid_5fexperiment_2ec_2',['pid_experiment.c',['../pid__experiment_8c.html',1,'']]],
+  ['ppm_2ec_3',['ppm.c',['../ppm_8c.html',1,'']]],
+  ['ppm_2eh_4',['ppm.h',['../ppm_8h.html',1,'']]],
+  ['ppm_2emd_5',['ppm.md',['../ppm_8md.html',1,'']]],
+  ['ppm_5fradio_5flink_2ec_6',['ppm_radio_link.c',['../ppm__radio__link_8c.html',1,'']]]
 ];
