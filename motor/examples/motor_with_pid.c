@@ -1,4 +1,12 @@
 /**
+ * @dir motor
+ * @brief This folder contains all files related to Motor
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @dir motor/examples
+ * @brief Motor device with different examples
+ * @details  More details to be displayed on the folder's page.
+ * 
  * @file motor_with_pid.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
