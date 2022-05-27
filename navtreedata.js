@@ -25,12 +25,14 @@
 var NAVTREE =
 [
   [ "cSTER devices", "index.html", [
-    [ "Getting Started", "index.html#autotoc_md36", null ],
-    [ "Device Documentation", "index.html#autotoc_md37", null ],
-    [ "Help", "index.html#autotoc_md38", null ],
-    [ "GitHub Repository", "index.html#autotoc_md39", null ],
-    [ "Authors", "index.html#autotoc_md40", null ],
-    [ "License", "index.html#autotoc_md41", null ],
+    [ "Main Page", "index.html", [
+      [ "Getting Started", "index.html#autotoc_md36", null ],
+      [ "Device Documentation", "index.html#autotoc_md37", null ],
+      [ "Help", "index.html#autotoc_md38", null ],
+      [ "GitHub Repository", "index.html#autotoc_md39", null ],
+      [ "Authors", "index.html#autotoc_md40", null ],
+      [ "License", "index.html#autotoc_md41", null ]
+    ] ],
     [ "Devices Documentation", "md_resources_doc_pages_devices_documentation.html", [
       [ "Motor", "md_resources_doc_pages_devices_documentation.html#autotoc_md5", [
         [ "Description", "md_resources_doc_pages_devices_documentation.html#autotoc_md6", null ],
@@ -119,7 +121,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"struct_p_i_d__params__t.html#afa8d148517a131130ffb7b9f0d1cfb6f"
+"struct_p_i_d__params__t.html#ad919193f0a73f2a11208fbbecf3b3daf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
