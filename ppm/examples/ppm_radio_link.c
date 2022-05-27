@@ -1,4 +1,14 @@
 /**
+ * 
+ * @dir ppm
+ * @brief This folder contains all files related to Pulse-Position Modulation (PPM)
+ * @details More details to be displayed on the folder's page.
+ * 
+ * 
+ * @dir ppm/examples
+ * @brief PPM device examples
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file ppm_radio_link.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
