@@ -1,4 +1,4 @@
-# cSTER devices
+# Main Page
 
 <br />
 <div align="center">
