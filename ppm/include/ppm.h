@@ -1,4 +1,8 @@
 /**
+ * @dir ppm/include
+ * @brief PPM library
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file ppm.h
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)

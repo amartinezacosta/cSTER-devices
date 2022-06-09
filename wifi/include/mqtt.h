@@ -1,4 +1,12 @@
 /**
+ * @dir wifi
+ * @brief This folder contains all files related to WiFi
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @dir wifi/include
+ * @brief WiFi library
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file mqtt.h
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)

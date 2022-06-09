@@ -1,4 +1,8 @@
 /**
+ * @dir motor/src
+ * @brief Motor source code
+ * @details Motor details to be displayed on the folder's page.
+ * 
  * @file motor.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)

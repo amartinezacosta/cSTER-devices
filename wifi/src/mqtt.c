@@ -1,4 +1,8 @@
 /**
+ * @dir wifi/src
+ * @brief WiFi source code
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file mqtt.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)

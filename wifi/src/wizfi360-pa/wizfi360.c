@@ -1,4 +1,8 @@
 /**
+ * @dir wifi/src/wizfi360-pa
+ * @brief Wizfi360-pa source code 
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file wizfi360.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)

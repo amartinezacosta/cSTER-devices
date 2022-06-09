@@ -1,4 +1,12 @@
 /**
+ * @dir servo
+ * @brief This folder contains all files related to Servo
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @dir servo/example
+ * @brief Servo device examples
+ * @details More details to be displayed on the folder's page.
+ * 
  * @file servo_example.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
