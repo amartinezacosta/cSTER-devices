@@ -1,6 +1,5 @@
 var mqtt_8h =
 [
-    [ "mqtt_callback_t", "structmqtt__callback__t.html", "structmqtt__callback__t" ],
     [ "mqtt_t", "structmqtt__t.html", "structmqtt__t" ],
     [ "BAD_USER_PASSWORD", "mqtt_8h.html#ab6b0bcaeeacfc18d4955034c471938a8", null ],
     [ "CONNACK", "mqtt_8h.html#a8fdbc4a06d36325fba03cafa89fabcd5", null ],
@@ -17,12 +16,14 @@ var mqtt_8h =
     [ "DISCONNECT", "mqtt_8h.html#a587604e6f3570c0fc32794384d4d0d1f", null ],
     [ "IDENTIFIER_REJECTED", "mqtt_8h.html#a539db1cb60c1632a2346d98317b28fc1", null ],
     [ "MQTT_CONNECTED", "mqtt_8h.html#abb5539db14c26155eebe929fa84d1e96", null ],
+    [ "MQTT_CONNECTION_TIMEOUT", "mqtt_8h.html#a4c164f322b892ab16d49dafea0073ca3", null ],
     [ "MQTT_DISCONNECTED", "mqtt_8h.html#adaf86a906a305dd129164982d50111b3", null ],
     [ "MQTT_FAILED_PUBLISH", "mqtt_8h.html#afa2514a84c4d83024fb7e67e7cae3123", null ],
     [ "MQTT_FAILED_SUBSCRIBE", "mqtt_8h.html#a1b8d955e332990e04db30fa91536c1d3", null ],
-    [ "MQTT_MAX_CALLBACKS", "mqtt_8h.html#aba9de90da23c2ca1be5f786a1db18afe", null ],
     [ "MQTT_OK", "mqtt_8h.html#a330756666c46eb3f90596477432fd8e3", null ],
     [ "NOT_AUTHORIZED", "mqtt_8h.html#a42a710bc16ed5598fde8553ac86fb20f", null ],
+    [ "PING_FALSE", "mqtt_8h.html#a9aed997efbe7f66c9e3fa0fdb974e979", null ],
+    [ "PING_TRUE", "mqtt_8h.html#a9656ce138b7378da7606a9b5da0f0356", null ],
     [ "PINGREQ", "mqtt_8h.html#ad22b3f2caca5c864a3c7b0dd9bd2aceb", null ],
     [ "PINGRESP", "mqtt_8h.html#a3bab410dbcf4cfc9e964c75e448ff029", null ],
     [ "PUBACK", "mqtt_8h.html#a2bd19736deca6adf997e4eda00972650", null ],
@@ -45,10 +46,10 @@ var mqtt_8h =
     [ "UNACCEPTABLE_PROTOCOL", "mqtt_8h.html#ad845654b021f3907a825ccb7cd83154c", null ],
     [ "UNSUBACK", "mqtt_8h.html#aa84e1b771dd8ef3e8f74f01b7a108b3a", null ],
     [ "UNSUBSCRIBE", "mqtt_8h.html#a3fa10093f760d21b96de7bdfbe7caa80", null ],
+    [ "MQTT_callback", "mqtt_8h.html#a34a75b368e4f4423f3d5c2971db5a679", null ],
     [ "mqtt_connect", "mqtt_8h.html#a3b9d2095e512a28a771742ae002c7016", null ],
-    [ "mqtt_ctor", "mqtt_8h.html#ae98dbbdc81d7372fd46cc325bd6fb9e5", null ],
+    [ "mqtt_ctor", "mqtt_8h.html#afc4689b9a47cdee1597bdb831c5d6738", null ],
     [ "mqtt_loop", "mqtt_8h.html#a2dd9add61958e1234e29940454d8a33f", null ],
     [ "mqtt_publish", "mqtt_8h.html#ad61d09c67c3434db02758c9227df036b", null ],
-    [ "mqtt_register", "mqtt_8h.html#a0edfa0b1046ba38bd2def0d6ad9b14f7", null ],
     [ "mqtt_subscribe", "mqtt_8h.html#a5af0757e9bba5785304c4992fa84201e", null ]
 ];

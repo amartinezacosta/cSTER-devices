@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['index_0',['index',['../structppm__t.html#a94d77b4be82b5b3f9a1b08eebf4a282e',1,'ppm_t']]],
-  ['integral_1',['integral',['../struct_p_i_d__t.html#a58c389fb1112d7f497c94fcedc4db023',1,'PID_t']]]
+  ['gpio0_0',['gpio0',['../structmotor__t.html#a0c2ccb7aa7dff63677cb6ef23eba86c6',1,'motor_t']]],
+  ['gpio1_1',['gpio1',['../structmotor__t.html#af580e167a270f6ff9205a0331cede03f',1,'motor_t']]],
+  ['gpio_5fsleep_2',['gpio_sleep',['../structmotor__t.html#a5333be583be168db806d85fa6ed69e84',1,'motor_t']]]
 ];

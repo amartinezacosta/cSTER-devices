@@ -1,6 +1,8 @@
 <map id="wifi/include/wizfi360.h" name="wifi/include/wizfi360.h">
-<area shape="rect" id="node1" title="Wizfi360 WiFi Module library." alt="" coords="71,5,218,32"/>
-<area shape="rect" id="node2" href="$mqtt_8h.html" title="MQTT protocol library." alt="" coords="5,87,132,114"/>
-<area shape="rect" id="node4" href="$wizfi360_8c.html" title="Wizfi360 WiFi Module source code." alt="" coords="157,80,287,121"/>
-<area shape="rect" id="node3" href="$mqtt_8c.html" title="MQTT protocol source code." alt="" coords="17,169,120,196"/>
+<area shape="rect" id="node1" title="Wizfi360 WiFi Module library." alt="" coords="189,5,336,32"/>
+<area shape="rect" id="node2" href="$mqtt__publish_8c.html" title=" " alt="" coords="5,169,136,211"/>
+<area shape="rect" id="node3" href="$mqtt__subscribe_8c.html" title=" " alt="" coords="288,169,419,211"/>
+<area shape="rect" id="node4" href="$mqtt_8h.html" title="MQTT protocol library." alt="" coords="149,87,275,114"/>
+<area shape="rect" id="node6" href="$wizfi360_8c.html" title="Wizfi360 WiFi Module source code." alt="" coords="351,80,481,121"/>
+<area shape="rect" id="node5" href="$mqtt_8c.html" title="MQTT protocol source code." alt="" coords="161,177,263,203"/>
 </map>

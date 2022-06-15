@@ -1,4 +1,6 @@
 <map id="wifi/include/mqtt.h" name="wifi/include/mqtt.h">
-<area shape="rect" id="node1" title="MQTT protocol library." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node2" href="$mqtt_8c.html" title="MQTT protocol source code." alt="" coords="17,80,120,107"/>
+<area shape="rect" id="node1" title="MQTT protocol library." alt="" coords="162,5,289,32"/>
+<area shape="rect" id="node2" href="$mqtt__publish_8c.html" title=" " alt="" coords="5,80,136,121"/>
+<area shape="rect" id="node3" href="$mqtt__subscribe_8c.html" title=" " alt="" coords="160,80,291,121"/>
+<area shape="rect" id="node4" href="$mqtt_8c.html" title="MQTT protocol source code." alt="" coords="315,87,418,114"/>
 </map>

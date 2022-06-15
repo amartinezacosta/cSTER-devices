@@ -120,12 +120,8 @@ Include dependency graph for mqtt.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae98dbbdc81d7372fd46cc325bd6fb9e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt_8c.html#ae98dbbdc81d7372fd46cc325bd6fb9e5">mqtt_ctor</a> (<a class="el" href="structmqtt__t.html">mqtt_t</a> *const me, <a class="el" href="structwizfi__t.html">wizfi_t</a> *const client)</td></tr>
-<tr class="memdesc:ae98dbbdc81d7372fd46cc325bd6fb9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mqtt constructor.  <a href="mqtt_8c.html#ae98dbbdc81d7372fd46cc325bd6fb9e5">More...</a><br /></td></tr>
-<tr class="separator:ae98dbbdc81d7372fd46cc325bd6fb9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edfa0b1046ba38bd2def0d6ad9b14f7"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt_8c.html#a0edfa0b1046ba38bd2def0d6ad9b14f7">mqtt_register</a> (<a class="el" href="structmqtt__t.html">mqtt_t</a> *const me, char const *topic, void(*mqtt_callback)(uint8_t const *, uint32_t))</td></tr>
-<tr class="memdesc:a0edfa0b1046ba38bd2def0d6ad9b14f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mqtt register.  <a href="mqtt_8c.html#a0edfa0b1046ba38bd2def0d6ad9b14f7">More...</a><br /></td></tr>
-<tr class="separator:a0edfa0b1046ba38bd2def0d6ad9b14f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4689b9a47cdee1597bdb831c5d6738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt_8c.html#afc4689b9a47cdee1597bdb831c5d6738">mqtt_ctor</a> (<a class="el" href="structmqtt__t.html">mqtt_t</a> *const me, <a class="el" href="structwizfi__t.html">wizfi_t</a> *const client, uint8_t *buffer, uint32_t buffer_size, <a class="el" href="mqtt_8h.html#a34a75b368e4f4423f3d5c2971db5a679">MQTT_callback</a> <a class="el" href="mqtt__subscribe_8c.html#a3ea5a9d23444e91da440b53f6ca629a0">callback</a>)</td></tr>
+<tr class="separator:afc4689b9a47cdee1597bdb831c5d6738"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b9d2095e512a28a771742ae002c7016"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt_8c.html#a3b9d2095e512a28a771742ae002c7016">mqtt_connect</a> (<a class="el" href="structmqtt__t.html">mqtt_t</a> *const me, char const *client_id, const char *address, uint32_t port)</td></tr>
 <tr class="memdesc:a3b9d2095e512a28a771742ae002c7016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mqtt connect.  <a href="mqtt_8c.html#a3b9d2095e512a28a771742ae002c7016">More...</a><br /></td></tr>
 <tr class="separator:a3b9d2095e512a28a771742ae002c7016"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,8 +196,8 @@ Jesus Minjares (<a href="#" onclick="location.href='mai'+'lto:'+'jmi'+'nj'+'are'
 
 </div>
 </div>
-<a id="ae98dbbdc81d7372fd46cc325bd6fb9e5" name="ae98dbbdc81d7372fd46cc325bd6fb9e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae98dbbdc81d7372fd46cc325bd6fb9e5">&#9670;&nbsp;</a></span>mqtt_ctor()</h2>
+<a id="afc4689b9a47cdee1597bdb831c5d6738" name="afc4689b9a47cdee1597bdb831c5d6738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4689b9a47cdee1597bdb831c5d6738">&#9670;&nbsp;</a></span>mqtt_ctor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +212,25 @@ Jesus Minjares (<a href="#" onclick="location.href='mai'+'lto:'+'jmi'+'nj'+'are'
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structwizfi__t.html">wizfi_t</a> *const&#160;</td>
-          <td class="paramname"><em>client</em>&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mqtt_8h.html#a34a75b368e4f4423f3d5c2971db5a679">MQTT_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -225,16 +239,6 @@ Jesus Minjares (<a href="#" onclick="location.href='mai'+'lto:'+'jmi'+'nj'+'are'
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Mqtt constructor. </p>
-<p >Detailed description starts here </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">me</td><td>pointer to mqttt object </td></tr>
-    <tr><td class="paramname">client</td><td>pointer to wizfi object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
 </div>
 </div>
@@ -310,51 +314,6 @@ Jesus Minjares (<a href="#" onclick="location.href='mai'+'lto:'+'jmi'+'nj'+'are'
     <tr><td class="paramname">topic</td><td>topic string </td></tr>
     <tr><td class="paramname">payload</td><td>payload array </td></tr>
     <tr><td class="paramname">payload_size</td><td>payload_size </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t status </dd></dl>
-
-</div>
-</div>
-<a id="a0edfa0b1046ba38bd2def0d6ad9b14f7" name="a0edfa0b1046ba38bd2def0d6ad9b14f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0edfa0b1046ba38bd2def0d6ad9b14f7">&#9670;&nbsp;</a></span>mqtt_register()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t mqtt_register </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmqtt__t.html">mqtt_t</a> *const&#160;</td>
-          <td class="paramname"><em>me</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char const *&#160;</td>
-          <td class="paramname"><em>topic</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(uint8_t const *, uint32_t)&#160;</td>
-          <td class="paramname"><em>mqtt_callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mqtt register. </p>
-<p >Detailed description starts here </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">me</td><td>pointer to mqttt object </td></tr>
-    <tr><td class="paramname">topic</td><td>topic string </td></tr>
-    <tr><td class="paramname">mqtt_callback</td><td>callback </td></tr>
   </table>
   </dd>
 </dl>

@@ -108,9 +108,8 @@ Collaboration diagram for mqtt_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmqtt__t__coll__graph.png" border="0" usemap="#amqtt__t_coll__map" alt="Collaboration graph"/></div>
 <map name="amqtt__t_coll__map" id="amqtt__t_coll__map">
-<area shape="rect" title="Mqtt object." alt="" coords="26,160,153,267"/>
-<area shape="rect" href="structwizfi__t.html" title="Wizfi object." alt="" coords="5,13,64,90"/>
-<area shape="rect" href="structmqtt__callback__t.html" title="Mqtt callback object." alt="" coords="88,5,203,97"/>
+<area shape="rect" title="Mqtt object." alt="" coords="5,145,100,325"/>
+<area shape="rect" href="structwizfi__t.html" title="Wizfi object." alt="" coords="23,5,82,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -122,52 +121,70 @@ Data Fields</h2></td></tr>
 <tr class="separator:a9263cfe7a9d4f147d3a515bc6d960981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2930b95dd7c1780aabf68a7153a477"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a2a2930b95dd7c1780aabf68a7153a477">keep_alive</a></td></tr>
 <tr class="separator:a2a2930b95dd7c1780aabf68a7153a477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad215f4b2c96458028bbcdb086fe30a32"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#ad215f4b2c96458028bbcdb086fe30a32">callbacks_count</a></td></tr>
-<tr class="separator:ad215f4b2c96458028bbcdb086fe30a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28779189f0f96c8badac427ef9d4aa1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmqtt__callback__t.html">mqtt_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a28779189f0f96c8badac427ef9d4aa1a">callbacks</a> [<a class="el" href="mqtt_8h.html#aba9de90da23c2ca1be5f786a1db18afe">MQTT_MAX_CALLBACKS</a>]</td></tr>
-<tr class="separator:a28779189f0f96c8badac427ef9d4aa1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244352bb29e7d5e6b8f5e4d4572ca36b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a244352bb29e7d5e6b8f5e4d4572ca36b">last_in</a></td></tr>
+<tr class="separator:a244352bb29e7d5e6b8f5e4d4572ca36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da19586dbea677f9cba662574001405"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a5da19586dbea677f9cba662574001405">last_out</a></td></tr>
+<tr class="separator:a5da19586dbea677f9cba662574001405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3273fe307b6e99fda97564c37d21b891"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a3273fe307b6e99fda97564c37d21b891">ping</a></td></tr>
+<tr class="separator:a3273fe307b6e99fda97564c37d21b891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfeb59313ecb605e9d05393de1ee48a"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a5dfeb59313ecb605e9d05393de1ee48a">buffer</a></td></tr>
+<tr class="separator:a5dfeb59313ecb605e9d05393de1ee48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a972b735df28c87af05e3f577907667b6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a972b735df28c87af05e3f577907667b6">buffer_size</a></td></tr>
+<tr class="separator:a972b735df28c87af05e3f577907667b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21814a60466e6b028856b5576174509b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mqtt_8h.html#a34a75b368e4f4423f3d5c2971db5a679">MQTT_callback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__t.html#a21814a60466e6b028856b5576174509b">callback</a></td></tr>
+<tr class="separator:a21814a60466e6b028856b5576174509b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Mqtt object. </p>
-<h3><a class="anchor" id="autotoc_md55"></a>
+<h3><a class="anchor" id="autotoc_md54"></a>
 Example</h3>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
 <div class="line">     <a class="code hl_struct" href="structwizfi__t.html">wizfi_t</a> *<a class="code hl_variable" href="structmqtt__t.html#a2ee8ced071a45e940c23384362760487">client</a>;</div>
 <div class="line">     uint32_t <a class="code hl_variable" href="structmqtt__t.html#a9263cfe7a9d4f147d3a515bc6d960981">state</a>;</div>
-<div class="line">     uint32_t <a class="code hl_variable" href="structmqtt__t.html#ad215f4b2c96458028bbcdb086fe30a32">callbacks_count</a>;</div>
-<div class="line">     <a class="code hl_struct" href="structmqtt__callback__t.html">mqtt_callback_t</a> <a class="code hl_variable" href="structmqtt__t.html#a28779189f0f96c8badac427ef9d4aa1a">callbacks</a>[<a class="code hl_define" href="mqtt_8h.html#aba9de90da23c2ca1be5f786a1db18afe">MQTT_MAX_CALLBACKS</a>]l</div>
+<div class="line">     uint32_t callbacks_count;</div>
+<div class="line">     mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS]l</div>
 <div class="line">}<a class="code hl_struct" href="structmqtt__t.html">mqtt_t</a>;</div>
-<div class="ttc" id="amqtt_8h_html_aba9de90da23c2ca1be5f786a1db18afe"><div class="ttname"><a href="mqtt_8h.html#aba9de90da23c2ca1be5f786a1db18afe">MQTT_MAX_CALLBACKS</a></div><div class="ttdeci">#define MQTT_MAX_CALLBACKS</div><div class="ttdef"><b>Definition:</b> mqtt.h:79</div></div>
-<div class="ttc" id="astructmqtt__callback__t_html"><div class="ttname"><a href="structmqtt__callback__t.html">mqtt_callback_t</a></div><div class="ttdoc">Mqtt callback object.</div><div class="ttdef"><b>Definition:</b> mqtt.h:96</div></div>
-<div class="ttc" id="astructmqtt__t_html"><div class="ttname"><a href="structmqtt__t.html">mqtt_t</a></div><div class="ttdoc">Mqtt object.</div><div class="ttdef"><b>Definition:</b> mqtt.h:117</div></div>
-<div class="ttc" id="astructmqtt__t_html_a28779189f0f96c8badac427ef9d4aa1a"><div class="ttname"><a href="structmqtt__t.html#a28779189f0f96c8badac427ef9d4aa1a">mqtt_t::callbacks</a></div><div class="ttdeci">mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS]</div><div class="ttdef"><b>Definition:</b> mqtt.h:123</div></div>
-<div class="ttc" id="astructmqtt__t_html_a2ee8ced071a45e940c23384362760487"><div class="ttname"><a href="structmqtt__t.html#a2ee8ced071a45e940c23384362760487">mqtt_t::client</a></div><div class="ttdeci">wizfi_t * client</div><div class="ttdef"><b>Definition:</b> mqtt.h:118</div></div>
-<div class="ttc" id="astructmqtt__t_html_a9263cfe7a9d4f147d3a515bc6d960981"><div class="ttname"><a href="structmqtt__t.html#a9263cfe7a9d4f147d3a515bc6d960981">mqtt_t::state</a></div><div class="ttdeci">uint32_t state</div><div class="ttdef"><b>Definition:</b> mqtt.h:119</div></div>
-<div class="ttc" id="astructmqtt__t_html_ad215f4b2c96458028bbcdb086fe30a32"><div class="ttname"><a href="structmqtt__t.html#ad215f4b2c96458028bbcdb086fe30a32">mqtt_t::callbacks_count</a></div><div class="ttdeci">uint32_t callbacks_count</div><div class="ttdef"><b>Definition:</b> mqtt.h:122</div></div>
+<div class="ttc" id="astructmqtt__t_html"><div class="ttname"><a href="structmqtt__t.html">mqtt_t</a></div><div class="ttdoc">Mqtt object.</div><div class="ttdef"><b>Definition:</b> mqtt.h:103</div></div>
+<div class="ttc" id="astructmqtt__t_html_a2ee8ced071a45e940c23384362760487"><div class="ttname"><a href="structmqtt__t.html#a2ee8ced071a45e940c23384362760487">mqtt_t::client</a></div><div class="ttdeci">wizfi_t * client</div><div class="ttdef"><b>Definition:</b> mqtt.h:104</div></div>
+<div class="ttc" id="astructmqtt__t_html_a9263cfe7a9d4f147d3a515bc6d960981"><div class="ttname"><a href="structmqtt__t.html#a9263cfe7a9d4f147d3a515bc6d960981">mqtt_t::state</a></div><div class="ttdeci">uint32_t state</div><div class="ttdef"><b>Definition:</b> mqtt.h:105</div></div>
 <div class="ttc" id="astructwizfi__t_html"><div class="ttname"><a href="structwizfi__t.html">wizfi_t</a></div><div class="ttdoc">Wizfi object.</div><div class="ttdef"><b>Definition:</b> wizfi360.h:42</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a28779189f0f96c8badac427ef9d4aa1a" name="a28779189f0f96c8badac427ef9d4aa1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28779189f0f96c8badac427ef9d4aa1a">&#9670;&nbsp;</a></span>callbacks</h2>
+<a id="a5dfeb59313ecb605e9d05393de1ee48a" name="a5dfeb59313ecb605e9d05393de1ee48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfeb59313ecb605e9d05393de1ee48a">&#9670;&nbsp;</a></span>buffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmqtt__callback__t.html">mqtt_callback_t</a> mqtt_t::callbacks[<a class="el" href="mqtt_8h.html#aba9de90da23c2ca1be5f786a1db18afe">MQTT_MAX_CALLBACKS</a>]</td>
+          <td class="memname">uint8_t* mqtt_t::buffer</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad215f4b2c96458028bbcdb086fe30a32" name="ad215f4b2c96458028bbcdb086fe30a32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad215f4b2c96458028bbcdb086fe30a32">&#9670;&nbsp;</a></span>callbacks_count</h2>
+<a id="a972b735df28c87af05e3f577907667b6" name="a972b735df28c87af05e3f577907667b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a972b735df28c87af05e3f577907667b6">&#9670;&nbsp;</a></span>buffer_size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t mqtt_t::callbacks_count</td>
+          <td class="memname">uint32_t mqtt_t::buffer_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21814a60466e6b028856b5576174509b" name="a21814a60466e6b028856b5576174509b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21814a60466e6b028856b5576174509b">&#9670;&nbsp;</a></span>callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mqtt_8h.html#a34a75b368e4f4423f3d5c2971db5a679">MQTT_callback</a> mqtt_t::callback</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,6 +213,48 @@ Example</h3>
       <table class="memname">
         <tr>
           <td class="memname">uint16_t mqtt_t::keep_alive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a244352bb29e7d5e6b8f5e4d4572ca36b" name="a244352bb29e7d5e6b8f5e4d4572ca36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244352bb29e7d5e6b8f5e4d4572ca36b">&#9670;&nbsp;</a></span>last_in</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t mqtt_t::last_in</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5da19586dbea677f9cba662574001405" name="a5da19586dbea677f9cba662574001405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da19586dbea677f9cba662574001405">&#9670;&nbsp;</a></span>last_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t mqtt_t::last_out</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3273fe307b6e99fda97564c37d21b891" name="a3273fe307b6e99fda97564c37d21b891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3273fe307b6e99fda97564c37d21b891">&#9670;&nbsp;</a></span>ping</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t mqtt_t::ping</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cSTER devices: mqtt_callback_t Struct Reference</title>
+<title>cSTER devices: wifi/examples/mqtt Directory Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structmqtt__callback__t.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('dir_e67187103240257d0e3fb24efdcf4b7a.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,77 +93,34 @@ $(document).ready(function(){initNavTree('structmqtt__callback__t.html',''); ini
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">mqtt_callback_t Struct Reference</div></div>
+  <div class="headertitle"><div class="title">mqtt Directory Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Mqtt callback object.  
- <a href="structmqtt__callback__t.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="mqtt_8h_source.html">mqtt.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for mqtt_callback_t:</div>
+Directory dependency graph for mqtt:</div>
 <div class="dyncontent">
-<div class="center"><img src="structmqtt__callback__t__coll__graph.png" border="0" usemap="#amqtt__callback__t_coll__map" alt="Collaboration graph"/></div>
-<map name="amqtt__callback__t_coll__map" id="amqtt__callback__t_coll__map">
-<area shape="rect" title="Mqtt callback object." alt="" coords="5,5,120,97"/>
+<div class="center"><img src="dir_e67187103240257d0e3fb24efdcf4b7a_dep.png" border="0" usemap="#adir__e67187103240257d0e3fb24efdcf4b7a__dep" alt="wifi/examples/mqtt"/></div>
+<map name="adir__e67187103240257d0e3fb24efdcf4b7a__dep" id="adir__e67187103240257d0e3fb24efdcf4b7a__dep">
+<area shape="rect" href="dir_e67187103240257d0e3fb24efdcf4b7a.html" title="mqtt" alt="" coords="27,52,99,100"/>
+<area shape="rect" href="dir_3fda3bb6e122768f0d28835772fa512c.html" title="include" alt="" coords="27,148,99,196"/>
+<area shape="rect" href="dir_000010_000008.html" title="4" alt="" coords="67,122,75,137"/>
+<area shape="rect" href="dir_d067493ab3e7e37e862e6b7b2ebfc399.html" title="examples" alt="" coords="16,16,109,111"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a03a002325e12e5b37e204bfcf37aa5fe"><td class="memItemLeft" align="right" valign="top">char const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__callback__t.html#a03a002325e12e5b37e204bfcf37aa5fe">topic</a></td></tr>
-<tr class="separator:a03a002325e12e5b37e204bfcf37aa5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8696231409c55cd0e876067fb0a92be"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmqtt__callback__t.html#ab8696231409c55cd0e876067fb0a92be">callback</a> )(uint8_t const *, uint32_t)</td></tr>
-<tr class="separator:ab8696231409c55cd0e876067fb0a92be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt__publish_8c.html">mqtt_publish.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mqtt__subscribe_8c.html">mqtt_subscribe.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Mqtt callback object. </p>
-<h3><a class="anchor" id="autotoc_md54"></a>
-Example</h3>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
-<div class="line">     <span class="keywordtype">char</span> <span class="keyword">const</span> *<a class="code hl_variable" href="structmqtt__callback__t.html#a03a002325e12e5b37e204bfcf37aa5fe">topic</a>;</div>
-<div class="line">     void(*<a class="code hl_variable" href="structmqtt__callback__t.html#ab8696231409c55cd0e876067fb0a92be">callback</a>)(uint8_t <span class="keyword">const</span> *, uint32_t);</div>
-<div class="line">}mqqt_callback_t;</div>
-<div class="ttc" id="astructmqtt__callback__t_html_a03a002325e12e5b37e204bfcf37aa5fe"><div class="ttname"><a href="structmqtt__callback__t.html#a03a002325e12e5b37e204bfcf37aa5fe">mqtt_callback_t::topic</a></div><div class="ttdeci">char const  * topic</div><div class="ttdef"><b>Definition:</b> mqtt.h:97</div></div>
-<div class="ttc" id="astructmqtt__callback__t_html_ab8696231409c55cd0e876067fb0a92be"><div class="ttname"><a href="structmqtt__callback__t.html#ab8696231409c55cd0e876067fb0a92be">mqtt_callback_t::callback</a></div><div class="ttdeci">void(* callback)(uint8_t const *, uint32_t)</div><div class="ttdef"><b>Definition:</b> mqtt.h:98</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ab8696231409c55cd0e876067fb0a92be" name="ab8696231409c55cd0e876067fb0a92be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8696231409c55cd0e876067fb0a92be">&#9670;&nbsp;</a></span>callback</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void(* mqtt_callback_t::callback) (uint8_t const *, uint32_t)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a03a002325e12e5b37e204bfcf37aa5fe" name="a03a002325e12e5b37e204bfcf37aa5fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03a002325e12e5b37e204bfcf37aa5fe">&#9670;&nbsp;</a></span>topic</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char const* mqtt_callback_t::topic</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structmqtt__callback__t.html">mqtt_callback_t</a></li>
+    <li class="navelem"><a class="el" href="dir_a701b57a7c8453ceba64c1289f0b7340.html">wifi</a></li><li class="navelem"><a class="el" href="dir_d067493ab3e7e37e862e6b7b2ebfc399.html">examples</a></li><li class="navelem"><a class="el" href="dir_e67187103240257d0e3fb24efdcf4b7a.html">mqtt</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
