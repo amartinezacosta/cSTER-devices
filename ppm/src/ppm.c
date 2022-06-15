@@ -1,7 +1,31 @@
+/**
+ * @dir ppm/src
+ * @brief PPM source code
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @file ppm.c
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief PPM device source code
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <ppm.h>
 
 void ppm_callback(void **args, uint32_t argc);
 
+/******************************************************************
+ * \brief PPM constructor
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to PPM object
+ * @param dev           generic capture device
+ * @param count         count value
+ * @return None
+ *******************************************************************/
 void ppm_ctor(ppm_t * const me, dev_t * const dev, uint32_t count)
 {
     me->index = 0;
@@ -18,6 +42,14 @@ void ppm_ctor(ppm_t * const me, dev_t * const dev, uint32_t count)
     Capture_ioctl(me->dev, HAL_IOCTL_EVENT_SET_ARGS, me);
 }
 
+/******************************************************************
+ * \brief PPM get channels
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to PPM object
+ * @param channels      array of channels
+ * @return None
+ *******************************************************************/
 void ppm_get_channels(ppm_t *me, uint32_t *channels)
 {
     /*TODO: disable this interrupt?*/

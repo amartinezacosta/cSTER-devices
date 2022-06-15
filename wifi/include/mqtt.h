@@ -1,3 +1,22 @@
+/**
+ * @dir wifi
+ * @brief This folder contains all files related to WiFi
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @dir wifi/include
+ * @brief WiFi library
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @file mqtt.h
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief MQTT protocol library
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef MQTT_H_
 #define MQTT_H_
 
@@ -66,6 +85,20 @@ typedef void(*MQTT_callback)(char const *,
                              uint8_t const * const,
                              uint32_t const);
 
+/******************************************************************
+ * \struct mqtt_t mqtt.h 
+ * \brief Mqtt object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      wizfi_t *client;
+ *      uint32_t state;
+ *      uint32_t callbacks_count;
+ *      mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS]l
+ * }mqtt_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     wizfi_t *client;
@@ -84,14 +117,11 @@ void mqtt_ctor(mqtt_t * const me,
                uint8_t *buffer,
                uint32_t buffer_size,
                MQTT_callback callback);
+               
 int32_t mqtt_connect(mqtt_t *const me,
                      char const *client_id,
                      const char *address,
                      uint32_t port);
-
-int32_t mqtt_register(mqtt_t * const me,
-                      char const *topic,
-                      void(*mqtt_callback)(uint8_t const *, uint32_t));
 
 int32_t mqtt_publish(mqtt_t * const me, char const *topic,
                      uint8_t const *payload, uint32_t payload_size);

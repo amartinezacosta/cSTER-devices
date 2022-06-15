@@ -1,6 +1,21 @@
+/**
+ * @dir wifi/src/wizfi360-pa
+ * @brief Wizfi360-pa source code 
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @file wizfi360.c
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief Wizfi360 WiFi Module source code
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "wizfi360.h"
 
-#define IS_NUMBER(a)    ((a > 47) && (a < 58))
+#define IS_NUMBER(a)    ((a > 47) && (a < 58))      /*!<Verifed it a number*/
 
 const char *WIZFI360TAGS[] =
 {
@@ -11,12 +26,22 @@ const char *WIZFI360TAGS[] =
      " CONNECT\r\n",
 };
 
-const uint32_t tags_count = sizeof(WIZFI360TAGS)/sizeof(WIZFI360TAGS[0]);
+const uint32_t tags_count = sizeof(WIZFI360TAGS)/sizeof(WIZFI360TAGS[0]); /*!< Total  tag count*/
 
 #ifdef WIZFI360_LOG_ENABLE
     static void wizfi_log_result(int32_t result);
 #endif
 
+
+
+/******************************************************************
+ * \brief Wizfi360 constructor
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param dev           pointer to device
+ * @return None
+ *******************************************************************/
 void wizfi360_ctor(wizfi_t * const me, dev_t * const dev)
 {
     /*Initialize UART character device for printf support*/
@@ -44,6 +69,16 @@ void wizfi360_ctor(wizfi_t * const me, dev_t * const dev)
     wizfi360_send_wait(me, "AT+CWDHCP_CUR=1,1", NULL, 100);
 }
 
+/******************************************************************
+ * \brief Wizfi360 send wait
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param cmd           command
+ * @param delimiter     string delimiter
+ * @param timeout       timeout
+ * @return int32_t      status
+ *******************************************************************/
 int32_t wizfi360_send_wait(wizfi_t *const me,
                            const char *cmd,
                            char const *delimiter,
@@ -148,6 +183,16 @@ int32_t wizfi360_connect(wizfi_t * const me, char const *ssid, char const *passw
     return result;
 }
 
+
+/******************************************************************
+ * \brief Wizfi360 start server
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param port          port number
+ * @param sock          socket
+ * @return int32_t      status
+ *******************************************************************/
 int32_t wizfi360_start_server(wizfi_t * const me, uint16_t port, uint8_t sock)
 {
     #ifdef WIZFI360_LOG_ENABLE
@@ -165,6 +210,15 @@ int32_t wizfi360_start_server(wizfi_t * const me, uint16_t port, uint8_t sock)
     return result;
 }
 
+/******************************************************************
+ * \brief Wizfi360 start client
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param address       address
+ * @param port          port number
+ * @return int32_t      status
+ *******************************************************************/
 int32_t wizfi360_start_client(wizfi_t * const me, char const *address, uint16_t port)
 {
     #ifdef WIZFI360_LOG_ENABLE
@@ -182,6 +236,15 @@ int32_t wizfi360_start_client(wizfi_t * const me, char const *address, uint16_t 
     return result;
 }
 
+/******************************************************************
+ * \brief Wizfi360 write
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param data          data array
+ * @param size          size of data
+ * @return uint32_t     status
+ *******************************************************************/
 uint32_t wizfi360_write(wizfi_t * const me, uint8_t const *data, uint32_t size)
 {
     #ifdef WIZFI360_LOG_ENABLE
@@ -223,6 +286,15 @@ uint32_t wizfi360_write(wizfi_t * const me, uint8_t const *data, uint32_t size)
     return sent;
 }
 
+/******************************************************************
+ * \brief Wizfi360 read
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to wizfi object
+ * @param data          data array
+ * @param size          size of data
+ * @return uint32_t     status
+ *******************************************************************/
 uint32_t wizfi360_read(wizfi_t * const me, uint8_t *data, uint32_t size)
 {
     /*Now wait for a response*/
@@ -326,6 +398,13 @@ uint32_t wizfi360_available(wizfi_t * const me)
 */
 
 #ifdef WIZFI360_LOG_ENABLE
+/******************************************************************
+ * \brief Wizfi360 write
+ * 
+ * Detailed description starts here 
+ * @param result    wizfi status result
+ * @return None
+ *******************************************************************/
 static void wizfi_log_result(int32_t result)
 {
     switch(result)

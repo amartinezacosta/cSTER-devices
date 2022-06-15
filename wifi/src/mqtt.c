@@ -1,3 +1,18 @@
+/**
+ * @dir wifi/src
+ * @brief WiFi source code
+ * @details More details to be displayed on the folder's page.
+ * 
+ * @file mqtt.c
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief MQTT protocol source code 
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "mqtt.h"
 
 //static uint32_t mqtt_encode_lenght(uint32_t size);
@@ -19,6 +34,16 @@ void mqtt_ctor(mqtt_t * const me,
     me->ping = PING_FALSE;
 }
 
+/******************************************************************
+ * \brief Mqtt connect
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param client_id     client id
+ * @param address       address
+ * @param port          port number 
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_connect(mqtt_t *const me,
                      char const *client_id,
                      const char *address,
@@ -99,6 +124,16 @@ int32_t mqtt_connect(mqtt_t *const me,
     return result;
 }
 
+/******************************************************************
+ * \brief Mqtt publish
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param topic         topic string
+ * @param payload       payload array
+ * @param payload_size  payload_size
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_publish(mqtt_t * const me, char const *topic,
                      uint8_t const *payload, uint32_t payload_size)
 {
@@ -149,6 +184,14 @@ int32_t mqtt_publish(mqtt_t * const me, char const *topic,
     return status;
 }
 
+/******************************************************************
+ * \brief Mqtt subscribe
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @param topic         topic string
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
 {
     uint32_t index = 0;
@@ -202,6 +245,14 @@ int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
     return status;
 }
 
+
+/******************************************************************
+ * \brief Mqtt loop
+ * 
+ * Detailed description starts here 
+ * @param me            pointer to mqttt object
+ * @return int32_t      status
+ *******************************************************************/
 int32_t mqtt_loop(mqtt_t * const me)
 {
     char topic[32];

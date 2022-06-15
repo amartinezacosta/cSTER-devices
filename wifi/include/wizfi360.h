@@ -1,3 +1,14 @@
+/**
+ * @file wizfi360.h
+ * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
+ * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
+ * @brief Wizfi360 WiFi Module library
+ * @version 0.1
+ * @date 2022-05-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef WIZFI360_H_
 #define WIZFI360_H_
 
@@ -16,6 +27,17 @@
 #define WIZFI360_CONNECT                    4
 #define WIZFI360_DELIMITER_FOUND            5
 
+/******************************************************************
+ * \struct wizfi_t wizfi360.h 
+ * \brief Wizfi object
+ * 
+ * ### Example
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.c
+ * typedef struct{
+ *      char_devio_t com;
+ * }wizfi_t;
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *******************************************************************/
 typedef struct
 {
     char_devio_t com;

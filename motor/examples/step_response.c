@@ -1,8 +1,8 @@
 /**
- * @file pid_experiment.c
+ * @file step_response.c
  * @authors Alejandro Martinez (mailto:amartinezacosta@miners.utep.edu)
  * @authors Jesus Minjares (mailto:jminjares4@miners.utep.edu)
- * @brief PID controller testing example code
+ * @brief Step response example code
  * @version 0.1
  * @date 2022-05-23
  * 
@@ -19,7 +19,12 @@
 #define DATA_POINTS 256
 
 uint32_t time[DATA_POINTS];
-int32_t encoder_output[DATA_POINTS];
+
+/*Outputs*/
+int32_t encoder_position[DATA_POINTS];
+int32_t encoder_delta[DATA_POINTS];
+
+/*Inputs*/
 uint32_t pwm_input[DATA_POINTS];
 
 int main(void)
@@ -49,29 +54,6 @@ int main(void)
     motor_t motor0;
     motor_ctor(&motor0, pwm0, pwm1, gpio0, gpio1, gpio_sleep);
 
-    /*Set default parameters for PID*/
-    PID_params_t default_params = 
-    {  
-        .kp = 25.0,
-        .ki = 0.1,
-        .kd = 0.0,
-        .error_max_threshold = 10.0,
-        .error_min_threshold = -10.0,
-        .max_integral = 25000.0,
-        .min_integral = -25000.0,
-        .max_output = 40000.0,
-        .min_output = -40000.0
-    };
-    
-    /*Instantiate pid object*/
-    PID_t motor_pid;
-    /*Initialize PID controller*/
-    pid_init(&motor_pid, &default_params);
-
-    /*Set reference*/
-    pid_set_reference(&motor_pid, 2660);
-    pid_update(&motor_pid, 0.0, 0.0);
-
     /*Enable motor*/
     motor_enable(&motor0);
 
@@ -81,46 +63,50 @@ int main(void)
     uint32_t t = 0;
     uint32_t index = 0;
 
+    /*Step input*/
+    uint32_t step = 40000;
+
     /*Perform experiment until set point has been reached*/
-    while(!pid_reached(&motor_pid) && (t < 10000))
+    while(t < 3000)
     {
         t0 = SysTick_millis();
 
-        /*Motor position and PID update*/
+        /*Motor position and motor delta position*/
         int32_t ticks = motor_position(&motor0);
-        float output = pid_update(&motor_pid, (float)ticks, 0.03);
+        int32_t delta = motor_position_delta(&motor0);
 
         /*Motor direction*/
-        uint32_t direction = output < 0 ? CLOCKWISE : COUNTER_CLOCKWISE;
-        uint32_t pwm = (uint32_t)fabs(output);
-
-        motor_speed(&motor0, (uint32_t)fabs(output), direction);
+        motor_speed(&motor0, step, COUNTER_CLOCKWISE);
 
         /*Save data for logging*/
         if(index < DATA_POINTS)
         {
-            /*Dave data*/
+            /*Save data*/
             time[index] = t;
-            pwm_input[index] = pwm;
-            encoder_output[index] = ticks;
+            pwm_input[index] = step;
+            encoder_position[index] = ticks;
+            encoder_delta[index] = delta; 
 
             /*Increment data index*/
             index++;
         }
-
 
         SysTick_delay(30);
         dt = SysTick_millis() - t0;
         t += dt;
     }
 
+    /*Stop motor*/
     motor_speed(&motor0, 0, 0);
 
-
     /*Experiment done, dump all data to serial console*/
-    for(uint32_t i = 0; i < DATA_POINTS; i++)
+    log_raw("time,pwm_input,ticks,delta_ticks");
+    for(uint32_t i = 0; i < index; i++)
     {
-        log_info("%i,%i,%i", time[i], pwm_input[i], encoder_output[i]);
+        log_raw("%i,%i,%i,%i", time[i], 
+                pwm_input[i], 
+                encoder_position[i],
+                encoder_delta[i]);
     }
 
     while(1)
