@@ -96,6 +96,7 @@ int32_t wizfi360_send_wait(wizfi_t *const me,
                     break;
                 }
             }
+
             /*Are we looking for a tag?*/
             else
             {
@@ -226,8 +227,8 @@ uint32_t wizfi360_read(wizfi_t * const me, uint8_t *data, uint32_t size)
 {
     /*Now wait for a response*/
     char c;
-    char buff[12];
-    char int_buff[6];
+    char int_buffer[6];
+    char str_buffer[64];
     char *str_match;
     uint32_t index = 0;
     uint32_t int_index = 0;
@@ -243,10 +244,10 @@ uint32_t wizfi360_read(wizfi_t * const me, uint8_t *data, uint32_t size)
         if(count > 0)
         {
             /*Check if buffer overrun*/
-            if(index < sizeof(buff) - 2)
+            if(index < 64)
             {
-                buff[index++] = c;
-                buff[index] = 0;
+                str_buffer[index++] = c;
+                str_buffer[index] = 0;
             }
             else
             {
@@ -256,19 +257,19 @@ uint32_t wizfi360_read(wizfi_t * const me, uint8_t *data, uint32_t size)
             }
 
             /*Check if we have found the "+IPD," string*/
-            str_match = strstr(buff, "+IPD,");
+            str_match = strstr(str_buffer, "+IPD,");
             if(str_match)
             {
                 /*Read until we don't find a numeric character*/
                 do
                 {
                     UART_read(me->com.dev, (uint8_t*)&c, 1);
-                    int_buff[int_index++] = c;
+                    int_buffer[int_index++] = c;
                 }while(IS_NUMBER(c));
 
                 /*Convert from ascii to integer*/
-                int_buff[int_index] = 0;
-                available = atoi(int_buff);
+                int_buffer[int_index] = 0;
+                available = atoi(int_buffer);
 
                 break;
             }
@@ -276,16 +277,12 @@ uint32_t wizfi360_read(wizfi_t * const me, uint8_t *data, uint32_t size)
         /*If timeout, just break. The available data will be zero
          * and we won't be reading the UART buffer
          */
-        if((SysTick_millis() - t0) > 1000) break;
+        if((SysTick_millis() - t0) > 1500) break;
     }
 
     /*Any data available?*/
     if(available)
     {
-        /*Clamp available to buffer size
-         * if available data is bigger
-         */
-        if(available > size) available = size;
         UART_read(me->com.dev, data, available);
     }
 

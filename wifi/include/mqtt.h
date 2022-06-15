@@ -4,6 +4,7 @@
 #include "wizfi360.h"
 
 /*MQTT FUNCTION RETURN CODES*/
+#define MQTT_CONNECTION_TIMEOUT -4
 #define MQTT_FAILED_SUBSCRIBE   -3
 #define MQTT_FAILED_PUBLISH     -2
 #define MQTT_DISCONNECTED       -1
@@ -32,7 +33,7 @@
 #define PUBREC          0x50
 #define PUBREL          0x60
 #define PUBCOMP         0x70
-#define SUBSCRIBE       0x80
+#define SUBSCRIBE       0x82
 #define SUBACK          0x90
 #define UNSUBSCRIBE     0xA0
 #define UNSUBACK        0xB0
@@ -57,25 +58,32 @@
 #define CONNECT_WILL_FLAG       0x04
 #define CONNECT_CLEAN_SESSION   0x02
 
-#define MQTT_MAX_CALLBACKS     10
+/*PING*/
+#define PING_FALSE              0
+#define PING_TRUE               1
 
-typedef struct
-{
-    char const *topic;
-    void(*callback)(uint8_t const *, uint32_t);
-}mqtt_callback_t;
+typedef void(*MQTT_callback)(char const *,
+                             uint8_t const * const,
+                             uint32_t const);
 
 typedef struct
 {
     wizfi_t *client;
     uint32_t state;
     uint16_t keep_alive;
-
-    uint32_t callbacks_count;
-    mqtt_callback_t callbacks[MQTT_MAX_CALLBACKS];
+    uint32_t last_in;
+    uint32_t last_out;
+    uint8_t ping;
+    uint8_t *buffer;
+    uint32_t buffer_size;
+    MQTT_callback callback;
 }mqtt_t;
 
-void mqtt_ctor(mqtt_t * const me, wizfi_t * const client);
+void mqtt_ctor(mqtt_t * const me,
+               wizfi_t * const client,
+               uint8_t *buffer,
+               uint32_t buffer_size,
+               MQTT_callback callback);
 int32_t mqtt_connect(mqtt_t *const me,
                      char const *client_id,
                      const char *address,

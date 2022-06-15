@@ -2,24 +2,21 @@
 
 //static uint32_t mqtt_encode_lenght(uint32_t size);
 
-void mqtt_ctor(mqtt_t * const me, wizfi_t * const client)
+void mqtt_ctor(mqtt_t * const me,
+               wizfi_t * const client,
+               uint8_t *buffer,
+               uint32_t buffer_size,
+               MQTT_callback callback)
 {
     me->client = client;
     me->state = MQTT_DISCONNECTED;
-    me->keep_alive = 60;
-}
-
-int32_t mqtt_register(mqtt_t * const me,
-                      char const *topic,
-                      void(*mqtt_callback)(uint8_t const *, uint32_t))
-{
-    uint32_t count = me->callbacks_count;
-    if(count > MQTT_MAX_CALLBACKS) return -1;
-
-    me->callbacks[count].topic = topic;
-    me->callbacks[count].callback = mqtt_callback;
-
-    return 0;
+    me->keep_alive = 6000;
+    me->buffer = buffer;
+    me->buffer_size = buffer_size;
+    me->callback = callback;
+    me->last_in = 0;
+    me->last_out = 0;
+    me->ping = PING_FALSE;
 }
 
 int32_t mqtt_connect(mqtt_t *const me,
@@ -27,7 +24,6 @@ int32_t mqtt_connect(mqtt_t *const me,
                      const char *address,
                      uint32_t port)
 {
-    uint8_t packet[64];
     uint32_t index = 0;
     int32_t result;
     result = wizfi360_start_client(me->client, address, port);
@@ -39,31 +35,32 @@ int32_t mqtt_connect(mqtt_t *const me,
         uint16_t id_lenght = strlen(client_id);
 
         /*Fixed header*/
-        packet[index++] = CONNECT;
+        me->buffer[index++] = CONNECT;
         /*Remaining lenght*/
-        packet[index++] = 12 + id_lenght;
+        me->buffer[index++] = 12 + id_lenght;
         /*Protocol name*/
-        packet[index++] = 0x00;
-        packet[index++] = 0x04;
-        packet[index++] = 'M';
-        packet[index++] = 'Q';
-        packet[index++] = 'T';
-        packet[index++] = 'T';
+        me->buffer[index++] = 0x00;
+        me->buffer[index++] = 0x04;
+        me->buffer[index++] = 'M';
+        me->buffer[index++] = 'Q';
+        me->buffer[index++] = 'T';
+        me->buffer[index++] = 'T';
         /*Protocol level MQTT 3.1.1*/
-        packet[index++] = 0x04;
+        me->buffer[index++] = 0x04;
         /*Connect flags. TODO: User parameter*/
-        packet[index++] = CONNECT_CLEAN_SESSION;
+        me->buffer[index++] = CONNECT_CLEAN_SESSION;
         /*Keep alive bytes. TODO: User parameter*/
-        packet[index++] = (me->keep_alive >> 8);
-        packet[index++] = (me->keep_alive & 0x0F);
+        uint16_t keep_alive = me->keep_alive / 1000;
+        me->buffer[index++] = (keep_alive >> 8);
+        me->buffer[index++] = (keep_alive & 0x0F);
 
         /*Payload data*/
         /*Client ID*/
-        packet[index++] = (id_lenght >> 8);
-        packet[index++] = (id_lenght & 0xFF);
+        me->buffer[index++] = (id_lenght >> 8);
+        me->buffer[index++] = (id_lenght & 0xFF);
         for(uint32_t i = 0; i < id_lenght; i++)
         {
-            packet[index++] = client_id[i];
+            me->buffer[index++] = client_id[i];
         }
 
         /*TODO: Will Topic*/
@@ -72,7 +69,10 @@ int32_t mqtt_connect(mqtt_t *const me,
         /*TODO: Password*/
 
         /*Write data to the network*/
-        wizfi360_write(me->client, packet, index);
+        wizfi360_write(me->client, me->buffer, index);
+
+        me->last_in = SysTick_millis();
+        me->last_out = SysTick_millis();
 
         /*Wait for CONNACK from broker*/
         uint8_t buff[12];
@@ -83,6 +83,8 @@ int32_t mqtt_connect(mqtt_t *const me,
              * amount of data, check it*/
             if(buff[3] == CONNECTION_ACCEPTED)
             {
+                me->last_in = SysTick_millis();
+                me->ping = PING_FALSE;
                 me->state = MQTT_CONNECTED;
                 log_info("MQTT client connected to %s:%i", address, port);
             }
@@ -100,7 +102,6 @@ int32_t mqtt_connect(mqtt_t *const me,
 int32_t mqtt_publish(mqtt_t * const me, char const *topic,
                      uint8_t const *payload, uint32_t payload_size)
 {
-    uint8_t packet[64];
     uint32_t index = 0;
     uint32_t status = MQTT_FAILED_PUBLISH;
 
@@ -109,30 +110,33 @@ int32_t mqtt_publish(mqtt_t * const me, char const *topic,
         log_info("MQTT client publishing to %s topic", topic);
         uint16_t topic_lenght = strlen(topic);
 
+        /*Check that this packet fits inside the buffer*/
+
         /*Fixed header*/
-        packet[index++] = PUBLISH | PUBLISH_QOS_0;
+        me->buffer[index++] = PUBLISH | PUBLISH_QOS_0;
         /*Remaining length. 2 + topic_lenght + 2 + payload_size*/
-        packet[index++] = topic_lenght  + payload_size + 4;
+        me->buffer[index++] = topic_lenght  + payload_size + 4;
 
         /*Topic name*/
-        packet[index++] = (topic_lenght >> 8);
-        packet[index++] = (topic_lenght & 0xFF);
+        me->buffer[index++] = (topic_lenght >> 8);
+        me->buffer[index++] = (topic_lenght & 0xFF);
         for(uint32_t i = 0; i < topic_lenght; i++)
         {
-            packet[index++] = topic[i];
+            me->buffer[index++] = topic[i];
         }
 
-        /*Packet identifier*/
-        packet[index++] = 0x00;
-        packet[index++] = 0x0A;
+        /*me->buffer identifier*/
+        me->buffer[index++] = 0x00;
+        me->buffer[index++] = 0x0A;
 
         /*Payload*/
         for(uint32_t i = 0; i < payload_size; i++)
         {
-            packet[index++] = payload[i];
+            me->buffer[index++] = payload[i];
         }
 
-        wizfi360_write(me->client, packet, index);
+        wizfi360_write(me->client, me->buffer, index);
+        me->last_out = SysTick_millis();
         status = MQTT_OK;
 
         log_info("MQTT client publish success into %s topic", topic);
@@ -147,7 +151,6 @@ int32_t mqtt_publish(mqtt_t * const me, char const *topic,
 
 int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
 {
-    uint8_t packet[64];
     uint32_t index = 0;
     int32_t status = MQTT_FAILED_SUBSCRIBE;
 
@@ -156,35 +159,34 @@ int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
         uint16_t topic_length = strlen(topic);
 
         /*Fixed header*/
-        packet[index++] = SUBSCRIBE;
+        me->buffer[index++] = SUBSCRIBE;
         /*Remaining length*/
-        packet[index++] = topic_length + 5;
+        me->buffer[index++] = topic_length + 5;
 
-        /*Packet identifier*/
-        packet[index++] = 0x00;
-        packet[index++] = 0x0A;
+        /*Payload identifier*/
+        me->buffer[index++] = 0x00;
+        me->buffer[index++] = 0x0A;
 
         /*Payload*/
-        packet[index++] = (topic_length >> 8);
-        packet[index++] = (topic_length & 0x0F);
+        me->buffer[index++] = (topic_length >> 8);
+        me->buffer[index++] = (topic_length & 0xFF);
         for(uint32_t i = 0; i < topic_length; i++)
         {
-            packet[index++] = topic[i];
+            me->buffer[index++] = topic[i];
         }
         /*QoS*/
-        packet[index++] = 0x00;
+        me->buffer[index++] = 0x00;
 
-        /*Write SUBSCRIBE packet*/
-        wizfi360_write(me->client, packet, index);
+        /*Write SUBSCRIBE me->buffer*/
+        wizfi360_write(me->client, me->buffer, index);
 
         /*Wait for SUBACK from broker*/
-        uint8_t buff[12];
-        uint32_t count = wizfi360_read(me->client,  buff, 12);
+        uint32_t count = wizfi360_read(me->client,  me->buffer, 64);
         if(count == 5)
         {
             /*We got something, at least is the right
              * amount of data, check it*/
-            if(buff[4] == SUBSCRIBE_SUCCESS_QOS_0)
+            if(me->buffer[4] == SUBSCRIBE_SUCCESS_QOS_0)
             {
                 status = MQTT_OK;
                 log_info("MQTT client subscribed to topic %s", topic);
@@ -202,71 +204,84 @@ int32_t mqtt_subscribe(mqtt_t * const me, char const *topic)
 
 int32_t mqtt_loop(mqtt_t * const me)
 {
-    uint8_t data[64];
-    char topic_buff[32];
+    char topic[32];
     uint8_t type;
-    uint16_t topic_lenght;
-    uint16_t payload_length;
-
     uint32_t count;
 
     while(me->state == MQTT_CONNECTED)
     {
         /*Send ping if keep alive timeout has been reached*/
-        //uint32_t t0 = SysTick_millis();
+        uint32_t t = SysTick_millis();
+        if(((t - me->last_in) > me->keep_alive) ||
+            ((t - me->last_out) > me->keep_alive))
+        {
+            if(me->ping)
+            {
+                me->state = MQTT_CONNECTION_TIMEOUT;
+                break;
+            }
+            else
+            {
+                /*Create ping request packet*/
+                me->buffer[0] = PINGREQ;
+                me->buffer[1] = 0;
+                wizfi360_write(me->client, me->buffer, 2);
+
+                /*Set time stamps and ping response*/
+                me->last_out = t;
+                me->last_in = t;
+                me->ping = PING_TRUE;
+            }
+        }
 
         /*Read data*/
-        count = wizfi360_read(me->client, data, 64);
+        count = wizfi360_read(me->client, me->buffer, me->buffer_size);
         if(count > 0)
         {
-            type = data[0] & 0xF0;
+            me->last_in = t;
+            type = me->buffer[0] & 0xF0;
 
             switch(type)
             {
             case PUBLISH:
                 {
                     /*Remaining length byte*/
-                    /*TODO: Variable length for more than 1 byte*/
-                    uint32_t index = 1;
-                    //uint8_t lenght = data[index++];
+                    uint8_t lenght = me->buffer[1];
 
-                    /*Topic*/
                     /*Topic length*/
-                    topic_lenght = (data[index++] << 8);
-                    topic_lenght |= data[index++];
+                    uint16_t topic_lenght = (me->buffer[2] << 8) | me->buffer[3];
 
                     /*Topic data*/
                     for(uint32_t i = 0; i < topic_lenght; i++)
                     {
-                        topic_buff[i] = data[index++];
+                        topic[i] = me->buffer[i + 4];
                     }
-                    topic_buff[topic_lenght] = 0;
+                    topic[topic_lenght] = 0;
 
-                    /*Payload*/
                     /*Payload length*/
-                    payload_length = (data[index++] << 8);
-                    payload_length |= data[index++];
+                    uint16_t payload_length = lenght - topic_lenght;
 
-                    /*Check if topic callback exists*/
-                    for(uint32_t i = 0; i < me->callbacks_count; i++)
+                    if(me->callback)
                     {
-                        if(!strcmp(me->callbacks[i].topic, topic_buff))
-                        {
-                            me->callbacks[i].callback(data + index, payload_length);
-                            break;
-                        }
+                        me->callback(topic,
+                                     me->buffer + topic_lenght + 4,
+                                     payload_length);
                     }
                 }
                 break;
             case PINGREQ:
+                me->buffer[0] = PINGRESP;
+                me->buffer[1] = 0;
+                wizfi360_write(me->client, me->buffer, 2);
                 break;
             case PINGRESP:
+                me->ping = PING_FALSE;
                 break;
             }
         }
     }
 
-    return MQTT_OK;
+    return me->state;
 }
 
 /*
